@@ -5,8 +5,8 @@
 /* Font-face para Agrandir (fonte local) */
 @font-face {
     font-family: 'Agrandir';
-    src: url('assets/fonts/Agrandir-ThinItalic.woff2') format('woff2'),
-        url('assets/fonts/Agrandir-ThinItalic.woff') format('woff');
+    src: url('codigochina.com/assets/fonts/Agrandir-ThinItalic.woff2') format('woff2'),
+        url('codigochina.com/assets/fonts/Agrandir-ThinItalic.woff') format('woff');
     font-weight: 100;
     font-style: italic;
     font-display: swap;
@@ -14,8 +14,8 @@
 
 @font-face {
     font-family: 'Agrandir';
-    src: url('assets/fonts/Agrandir-Regular.woff2') format('woff2'),
-        url('assets/fonts/Agrandir-Regular.woff') format('woff');
+    src: url('codigochina.com/assets/fonts/Agrandir-Regular.woff2') format('woff2'),
+        url('codigochina.com/assets/fonts/Agrandir-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -23,8 +23,8 @@
 
 @font-face {
     font-family: 'Agrandir';
-    src: url('assets/fonts/Agrandir-TextBold.woff2') format('woff2'),
-        url('assets/fonts/Agrandir-TextBold.woff') format('woff');
+    src: url('codigochina.com/assets/fonts/Agrandir-TextBold.woff2') format('woff2'),
+        url('codigochina.com/assets/fonts/Agrandir-TextBold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -32,8 +32,8 @@
 
 @font-face {
     font-family: 'Agrandir';
-    src: url('assets/fonts/Agrandir-GrandHeavy.woff2') format('woff2'),
-        url('assets/fonts/Agrandir-GrandHeavy.woff') format('woff');
+    src: url('codigochina.com/assets/fonts/Agrandir-GrandHeavy.woff2') format('woff2'),
+        url('codigochina.com/assets/fonts/Agrandir-GrandHeavy.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -1016,7 +1016,7 @@ img {
     align-items: center;
     justify-content: center;
     /* Imagem de fundo real */
-    background-image: url('assets/images/team/team-background.png');
+    background-image: url('codigochina.com/assets/images/team/team-background.png');
     background-size: cover;
     background-position: center;
     overflow: hidden;
