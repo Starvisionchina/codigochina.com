@@ -1,0 +1,38 @@
+/* Mobile adjustments for About Section - FORCE APPLY */
+@media (max-width: 768px) {
+    .about__container {
+        padding: 0 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .about__info-list {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .about__info-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        /* Ensure normal layout flow */
+        flex-wrap: nowrap !important;
+    }
+
+    .about__info-text {
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+        width: auto !important;
+    }
+
+    .about__info-detail {
+        word-wrap: break-word !important;
+        overflow-wrap: anywhere !important;
+        white-space: normal !important;
+        max-width: 100% !important;
+    }
+
+    .about__info-icon {
+        flex-shrink: 0 !important;
+    }
+}
