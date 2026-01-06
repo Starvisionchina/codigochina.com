@@ -23,34 +23,48 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-
-
     // Mobile Menu Toggle
     const mobileToggle = document.querySelector('.header__mobile-toggle');
-    const nav = document.querySelector('.header__nav');
-    const navLinks = document.querySelectorAll('.header__link');
+    const headerMenu = document.querySelector('.header__menu');
+    const menuLinks = document.querySelectorAll('.header__link');
 
-    if (mobileToggle) {
+    if (mobileToggle && headerMenu) {
         mobileToggle.addEventListener('click', function () {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            nav.classList.toggle('active');
+            this.classList.toggle('active');
+            headerMenu.classList.toggle('active');
+
+            // Toggle aria-expanded
+            const isExpanded = this.classList.contains('active');
+            this.setAttribute('aria-expanded', isExpanded);
         });
 
-        // Close menu when a link is clicked
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
+        // Close menu when clicking a link
+        menuLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                mobileToggle.classList.remove('active');
+                headerMenu.classList.remove('active');
                 mobileToggle.setAttribute('aria-expanded', 'false');
             });
         });
+    }
 
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!nav.contains(e.target) && !mobileToggle.contains(e.target) && nav.classList.contains('active')) {
-                nav.classList.remove('active');
-                mobileToggle.setAttribute('aria-expanded', 'false');
+    // Scroll to Top Functionality
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
             }
+        });
+
+        scrollToTopBtn.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     }
 });

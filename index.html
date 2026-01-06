@@ -7,7 +7,7 @@
     <meta name="description"
         content="Missão Código China 2026 - Canton Fair, Hong Kong, Shenzhen e Guangzhou. Sua oportunidade de fazer negócios na China.">
     <meta name="keywords"
-        content="Canton Fair, Starvision, Starvision China, Starvisionchina, Rodrigo Lima, Lima na china, limanachina, Chinalink, import melhor, vettros importação, ntl comex, cees, pablo marçal, metodo12p, gustavoimportação, gustavooliveiraimportação, yuanunpackschina, antonio fogaça, brasil importação china, China, Importação, Exportação, Negócios, Hong Kong, Shenzhen, Guangzhou, missão para Canton Fair, viagem empresarial China, missão de negócios China, feira Canton, fornecedores China, qualificação de fornecedores China, inspeção China, importação segura China.">
+        content="Canton Fair, China, Importação, Exportação, Negócios, Hong Kong, Shenzhen, Guangzhou, 2026">
     <meta name="author" content="Starvision">
 
     <!-- Open Graph -->
@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -36,24 +37,21 @@
             <a href="/" class="header__logo" title="Ir para página inicial">
                 <img src="assets/images/header/logo-starvision.png" alt="Logo Starvision" class="header__logo-img">
             </a>
-
-            <button class="header__mobile-toggle" aria-label="Abrir menu de navegação" aria-expanded="false"
-                aria-controls="primary-navigation">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-
-            <nav class="header__nav" role="navigation" id="primary-navigation">
+            <nav class="header__nav" role="navigation" aria-label="Menu Principal">
+                <!-- Desktop Menu -->
                 <ul class="header__menu">
-                    <li><a href="#mission-title" class="header__link">Mission Code China</a></li>
-                    <li class="header__separator" aria-hidden="true">|</li>
-                    <li><a href="#phases-title" class="header__link">Canton Fair Phases</a></li>
-                    <li class="header__separator" aria-hidden="true">|</li>
-                    <li><a href="#services-title" class="header__link">Benefits</a></li>
-                    <li class="header__separator" aria-hidden="true">|</li>
-                    <li><a href="#contact" class="header__link">Contact</a></li>
+                    <li><a href="#mission-objective" class="header__link">Missão Código China</a></li>
+                    <li><a href="#phases" class="header__link">Fases Canton Fair</a></li>
+                    <li><a href="#services" class="header__link">Benefícios</a></li>
+                    <li><a href="#inscricao" class="header__link">Contato</a></li>
                 </ul>
+
+                <!-- Mobile Toggle -->
+                <button class="header__mobile-toggle" aria-label="Abrir menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </nav>
         </div>
     </header>
@@ -62,11 +60,11 @@
     <main role="main">
         <!-- Hero Section -->
         <section class="hero" aria-labelledby="hero-title">
-            <!-- Background com gradiente -->
             <div class="hero__background">
+                <!-- Image for Mobile -->
                 <img src="assets/images/hero/hero-background.png" alt="Canton Fair China - Imagem de fundo"
                     class="hero__background-img">
-                <!--div class="hero__gradient-overlay"></div-->
+
 
             </div>
 
@@ -206,17 +204,16 @@
                 <!-- Vídeo à direita -->
                 <div class="jornada__video-wrapper">
                     <!-- VIDEO: assets/videos/video-jornada.mp4 -->
-                    <video class="jornada__video" src="assets/videos/video-jornada.mp4" autoplay muted loop playsinline
-                        poster="assets/images/jornada/video-poster.png"
+                    <video autoplay loop class="jornada__video" src="assets/videos/video-jornada.mp4" autoplay loop
+                        playsinline controls poster="assets/images/jornada/video-poster.png"
                         aria-label="Vídeo de apresentação da jornada na China">
-                        Seu navegador não suporta vídeos HTML5.
                     </video>
                 </div>
             </div>
         </section>
 
         <!-- Objetivo da Missão Section -->
-        <section class="mission-objective" aria-labelledby="mission-title">
+        <section class="mission-objective" aria-labelledby="mission-title" id="mission-objective">
             <h2 id="mission-title" class="mission-objective__title">Objetivo da Missão</h2>
 
             <div class="mission-objective__cards">
@@ -264,8 +261,7 @@
 
         <!-- Speakers Section -->
         <section class="speakers" aria-labelledby="speakers-title">
-            <h2 id="speakers-title" class="speakers__title">Quem lidera a<br><span
-                    class="speakers__title--highlight">Missão Código China</span></h2>
+            <h2 id="speakers-title" class="speakers__title">Quem lidera a Missão Código China</span></h2>
 
             <div class="speakers__container">
                 <!-- Speaker 1: Antonio Fogaça -->
@@ -344,8 +340,8 @@
         </section>
 
         <!-- Phases Section -->
-        <section class="phases" aria-labelledby="phases-title">
-            <h2 id="phases-title" class="phases__title">As Três Fases da<br>Canton Fair</h2>
+        <section class="phases" aria-labelledby="phases-title" id="phases">
+            <h2 id="phases-title" class="phases__title">As Três Fases da Canton Fair</h2>
             <p class="phases__intro">A Canton Fair é dividida em três fases, cada uma focando em diferentes segmentos de
                 produtos. Conheça o que cada fase oferece e prepare-se para as oportunidades de negócios:</p>
 
@@ -406,7 +402,7 @@
                 </article>
             </div>
 
-            <a href="#inscricao" class="phases__cta" title="Quero ir para China em 2026">
+            <a href="#inscricao" class="services__cta" title="Quero ir para China em 2026">
                 QUERO IR PARA CHINA EM 2026
             </a>
         </section>
@@ -418,7 +414,6 @@
             <div class="team-starvision__content">
                 <img src="assets/images/team/logo-starvision-team.png" alt="Logo Starvision 20 Anos"
                     class="team-starvision__logo">
-
             </div>
         </section>
 
@@ -531,67 +526,37 @@
         </section>
 
         <!-- Incluso na Missão Section -->
-        <section class="incluso" aria-labelledby="incluso-title">
+        <section class="incluso" aria-labelledby="incluso-title" id="services">
             <h2 id="incluso-title" class="incluso__title">O que está incluso na<br>Missão</h2>
 
+            <!-- Cards as Images -->
             <div class="incluso__container">
-                <!-- Card 1: Preparação e Estratégia -->
-                <img src="assets/images/incluso/card-preparacao.png"
-                    alt="Preparação e Estratégia: WorkShops Online - Workshop de preparação sobre estratégias de negociação e dicas sobre cultura, negócios e importação, aulas de mandarim e muito mais. Consultoria Especializada - Orientação de especialistas em comércio internacional antes, durante e depois da missão."
+                <img src="assets/images/incluso/card-preparacao.png" alt="Preparação e Estratégia"
                     class="incluso__card">
-
-                <!-- Card 2: Logística e Acesso -->
-                <img src="assets/images/incluso/card-logistica.png"
-                    alt="Logística e Acesso: Passagens Aéreas Internacionais - Voos internacionais de ida e volta em classe econômica ou executiva. Hospedagem Premium - Acomodação em hotéis de categoria superior com café da manhã. Trem Bala - Todos os deslocamentos terrestres entre aeroportos, hotéis e feira. Ingressos para Feira - Acesso garantido Canton Fair. Material e Certificação - Kit de participante e certificado oficial de participação na missão."
-                    class="incluso__card">
-
-                <!-- Card 3: Suporte e Vivência Local -->
-                <img src="assets/images/incluso/card-suporte.png"
-                    alt="Suporte e Vivência Local: Tradução e Suporte - Assistência em mandarim e inglês durante as negociações e visitas. Jantar de Networking - Jantar tradicional Chinês com grupo de Fornecedores selecionados."
-                    class="incluso__card">
+                <img src="assets/images/incluso/card-logistica.png" alt="Logística e Acesso" class="incluso__card">
+                <img src="assets/images/incluso/card-suporte.png" alt="Suporte e Vivência Local" class="incluso__card">
             </div>
 
-            <a href="#saiba-mais" class="incluso__cta" title="Saiba mais sobre o que está incluso">
-                SAIBA MAIS
+            <a href="#inscricao" class="incluso__cta" title="Quero ir para China em 2026">
+                QUERO IR PARA CHINA EM 2026
             </a>
         </section>
 
-
         <!-- Contact Form Section -->
-        <section id="contact-form" class="contact-form" aria-labelledby="form-title">
-            <div class="contact-form__background"></div>
+        <section id="inscricao" class="contact-form" aria-labelledby="form-title">
             <div class="contact-form__container">
-                <h2 id="form-title" class="contact-form__title">ENTRE EM CONTATO</h2>
-                <form id="contactForm" class="contact-form__form">
-                    <div class="form-group">
-                        <label for="nome" class="form-label">Nome</label>
-                        <input type="text" id="nome" name="nome" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="empresa" class="form-label">Empresa</label>
-                        <input type="text" id="empresa" name="empresa" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="whatsapp" class="form-label">WhatsApp</label>
-                        <input type="text" id="whatsapp" name="whatsapp" class="form-input"
-                            placeholder="(xx) xxxxx-xxxx" required>
-                    </div>
-
-                    <button type="submit" class="contact-form__submit">Enviar</button>
-
-                    <div id="form-feedback" class="form-feedback"></div>
-                </form>
+                <header class="contact-form__header">
+                    <h2 class="contact-form__title">Visite a china com a equipe Starvision</h2>
+                    <p class="contact-form__subtitle">Preencha o formulário agora mesmo e recebo uma PROPOSTA
+                        personalizada para sua empresa!</p>
+                </header>
+                <div class="contact-form__row">
+                    <!-- Typeform Embed -->
+                    <div data-tf-live="01KE86QRKK4F77RDMCA1P2CGSS"></div>
+                    <script src="https://embed.typeform.com/next/embed.js"></script>
+                </div>
             </div>
         </section>
-
-
 
         <!-- Social Media Section -->
         <section class="social" aria-label="Redes Sociais">
@@ -616,22 +581,30 @@
             </div>
         </section>
 
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact" aria-labelledby="contact-title">
-            <h2 id="contact-title" class="contact__title">Contact</h2>
-            <div class="contact__container">
-                <p>Formulário de contato em breve.</p>
-            </div>
-        </section>
-
+        <!-- Outras sections serão adicionadas aqui -->
 
     </main>
 
     <!-- Footer será adicionado aqui -->
 
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <!-- Scroll to Top -->
+        <button id="scrollToTop" class="floating-btn top-up" aria-label="Voltar ao topo">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <!-- WhatsApp Popup -->
+        <div class="whats-popup">
+            <a href="https://wa.me/555131031030" target="_blank" rel="noopener" class="whats-button"
+                aria-label="Falar no WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+                <span class="whats-badge">1</span>
+            </a>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
-
 
 </html>
