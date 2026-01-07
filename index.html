@@ -34,7 +34,7 @@
     <!-- Header -->
     <header class="header" role="banner">
         <div class="header__container">
-            <a href="/" class="header__logo" title="Ir para página inicial">
+            <a href="index.html" class="header__logo" title="Ir para página inicial">
                 <img src="assets/images/header/logo-starvision.png" alt="Logo Starvision" class="header__logo-img">
             </a>
             <nav class="header__nav" role="navigation" aria-label="Menu Principal">
@@ -70,6 +70,8 @@
 
             <div class="hero__content">
                 <div class="hero__main">
+                    <!-- Particle Canvas for golden glitters -->
+                    <canvas id="particle-canvas" class="hero__particles"></canvas>
                     <img src="assets/images/hero/logo-missao-china.png"
                         alt="Logo Missão Código China 2026 - Cavalo com design de circuito eletrônico"
                         class="hero__logo-missao">
@@ -82,8 +84,9 @@
                 </div>
 
                 <a href="#inscricao" class="hero__cta" title="Inscreva-se para ir à China em 2026">
-                    QUERO IR PRA CHINA EM 2026
+                    QUERO IR PARA A CHINA EM 2026
                 </a>
+
             </div>
         </section>
 
@@ -94,7 +97,7 @@
                 <article class="stats__card">
                     <img src="assets/images/stats/icon-50mil.png" alt="Ícone +50 Mil" class="stats__icon">
                     <div class="stats__card-body">
-                        <p class="stats__card-text">EXPOSITORES NA EDIÇÃO<br>ABRIL DE 2026</p>
+                        <p class="stats__card-text">MAIS DE 50 MIL<br>EXPOSITORES NA EDIÇÃO<br>DE ABRIL/2026</p>
                     </div>
                 </article>
 
@@ -102,7 +105,7 @@
                 <article class="stats__card">
                     <img src="assets/images/stats/icon-20anos.png" alt="Ícone 20 Anos" class="stats__icon">
                     <div class="stats__card-body">
-                        <p class="stats__card-text">DE EXPERIÊNCIA DA<br>IMERSÃO NA CHINA</p>
+                        <p class="stats__card-text">MAIS DE 20 ANOS<br>DE EXPERTISE EM<br>NEGÓCIOS NA CHINA</p>
                     </div>
                 </article>
 
@@ -128,7 +131,9 @@
                 <!-- Conteúdo -->
                 <div class="about__content">
                     <h2 id="about-title" class="about__title">
-                        A <span class="about__title--highlight">STARVISION</span> te leva a maior feira multisetorial do
+                        A <span class="about__title--highlight"><b>STARVISION</b></span> te leva a maior
+                        feira
+                        multisetorial do
                         mundo
                     </h2>
 
@@ -140,9 +145,9 @@
 
                     <!-- Stats Card -->
                     <div class="about__stats-card">
-                        <p class="about__stat">+20X O TAMANHO DA EXPO SP</p>
-                        <p class="about__stat">+3.5 MIL PRODUTOS INÉDITOS</p>
-                        <p class="about__stat">+60 MIL ESTANDES</p>
+                        <p class="about__stat">+ DE 20X O TAMANHO DA EXPO SP</p>
+                        <p class="about__stat">+ DE 3.5 MIL PRODUTOS INÉDITOS</p>
+                        <p class="about__stat">+ DE 60 MIL ESTANDES</p>
                     </div>
 
                     <!-- Info Items -->
@@ -167,7 +172,8 @@
                         </div>
                     </div>
 
-                    <a href="#saiba-mais" class="about__cta" title="Saiba mais sobre a Canton Fair">
+                    <a href="https://wa.me/555131031030" class="about__cta" title="Fale conosco no WhatsApp"
+                        target="_blank" rel="noopener">
                         SAIBA MAIS
                     </a>
                 </div>
@@ -180,24 +186,25 @@
                 <!-- Conteúdo à esquerda -->
                 <div class="jornada__content">
                     <h2 id="jornada-title" class="jornada__title">
-                        Uma jornada de <span class="jornada__title--highlight">Transformação</span> que vai ampliar sua
-                        visão de <span class="jornada__title--highlight">Negócios, Cultura</span> e <span
-                            class="jornada__title--highlight">Inovação</span>.
+                        Uma jornada de <span class="jornada__title--highlight"><b>transformação</b></span> que vai
+                        ampliar sua
+                        visão de <span class="jornada__title--highlight"><b>Negócios, Cultura</b></span> e <span
+                            class="jornada__title--highlight"><b>Inovação</b></span>
                     </h2>
 
                     <p class="jornada__description">
-                        Você vai aprender na prática, os códigos que transformaram centenas de empreendedores em
+                        Você vai aprender na prática os códigos que transformaram centenas de empreendedores em
                         importadores de sucesso.
                     </p>
 
                     <p class="jornada__description">
-                        Experiência para quem quer jogar a nível Global
+                        A experiência que transforma você em player global.
                     </p>
 
                     <p class="jornada__date">Abril de 2026</p>
 
                     <a href="#inscricao" class="jornada__cta" title="Inscreva-se para ir à China em 2026">
-                        QUERO IR PARA CHINA EM 2026
+                        QUERO IR PARA A CHINA EM 2026
                     </a>
                 </div>
 
@@ -312,18 +319,18 @@
                         <div class="speakers__card-bio">
                             <p class="speakers__card-preview">Com mais de 20 anos de experiência prática no comércio
                                 internacional, já auditou mais de 300 fábricas, participou de 18 edições da Canton Fair,
-                                apoiando seus clientes a importarem mais de 100 milhões de dólares.</p>
+                                apoiando clientes em importações que superam o total de US$ 100 milhões.</p>
 
                             <div class="speakers__card-full" hidden>
                                 <p>É CEO da STARVISION, empresa que conecta indústrias, varejistas e distribuidores
                                     brasileiros a fornecedores estratégicos na Ásia. Atua como consultor em projetos de
                                     importação, exportação e internacionalização de negócios. Representa diversas
-                                    empresas chinesas de matérias primas e equipamentos industriais e é especialista em
-                                    materiais compositos.</p>
+                                    empresas chinesas de matérias-primas e equipamentos industriais e é especialista em
+                                    materiais compósitos.</p>
                                 <p>Desde 2006, quando embarcou pela primeira vez para a China sem Google Tradutor, GPS
                                     ou smartphones, Rodrigo vem abrindo caminhos entre Brasil e China com coragem, visão
-                                    e resultados. Hoje, lidera esta missão com um objetivo claro: ajudar empresários
-                                    brasileiros a acessarem oportunidades reais e transformadoras no maior mercado do
+                                    e resultados. Hoje, lidera essa missão com um objetivo claro: ajudar empresários
+                                    brasileiros a acessar oportunidades reais e transformadoras no maior mercado do
                                     mundo.</p>
                                 <p>"A China mudou minha vida e pode transformar o seu negócio também. Quero te mostrar,
                                     na prática, os códigos para acessar esse mundo de oportunidades com segurança,
@@ -354,12 +361,10 @@
                         <h3 class="phases__phase-title">FASE 1</h3>
                         <p class="phases__date">15-19 de Abril</p>
                         <p class="phases__description">
-                            Eletrônicos & Eletrodomésticos, Produtos de Tecnologia da Informação.<br>
-                            Máquinas Industriais, Automação, Energia e Peças Mecânicas.<br>
-                            Veículos & Duas Rodas, Mobilidade Inteligente e Peças.<br>
-                            Equipamentos de Iluminação, Produtos Elétricos e Nova Energia.<br>
-                            Ferramentas e Produtos de Hardware.<br>
-                            Pavilhão Internacional.
+                            Eletrônicos e eletrodomésticos; produtos de tecnologia da informação; máquinas industriais;
+                            automação; energia e peças mecânicas; veículos e duas rodas; mobilidade inteligente e peças;
+                            equipamentos de iluminação; produtos elétricos e nova energia; ferramentas e produtos de
+                            hardware; pavilhão internacional.
                         </p>
                     </div>
                 </article>
@@ -371,12 +376,10 @@
                         <h3 class="phases__phase-title">FASE 2</h3>
                         <p class="phases__date">23-27 DE ABRIL</p>
                         <p class="phases__description">
-                            Cerâmicas em Geral, Utensílios de Cozinha e Itens Domésticos.<br>
-                            Vidros Artísticos, Decoração para Casa, Produtos de Jardim.<br>
-                            Presentes, Relógios, Instrumentos Ópticos e Cerâmicas de Arte.<br>
-                            Materiais de Construção e Decorativos, Equipamentos Sanitários.<br>
-                            Mobiliário, Decoração de Pedra/Ferro e Spas ao Ar Livre.<br>
-                            Pavilhão Internacional.
+                            Cerâmicas em geral; utensílios de cozinha e itens domésticos; vidros artísticos; decoração
+                            para casa; produtos de jardim; presentes; relógios; instrumentos ópticos e cerâmicas de
+                            arte; materiais de construção e decorativos; equipamentos sanitários; mobiliário; decoração
+                            de pedra/ferro e spas ao ar livre; pavilhão internacional.
                         </p>
                     </div>
                 </article>
@@ -389,25 +392,25 @@
                         <h3 class="phases__phase-title">FASE 3</h3>
                         <p class="phases__date">31 DE ABRIL - 4 DE MAIO</p>
                         <p class="phases__description">
-                            Brinquedos, Produtos Infantis, Bebê e Maternidade.<br>
-                            Moda Masculina e Feminina, Roupas Esportivas, Acessórios e Tecidos.<br>
-                            Têxteis para Casa, Tapetes e Tapeçarias.<br>
-                            Artigos de Papelaria e Escritório.<br>
-                            Medicamentos, Produtos de Saúde e Dispositivos Médicos.<br>
-                            Alimentos, Esportes, Viagens e Produtos de Recreação.<br>
-                            Especialidades Tradicionais Chinesas.<br>
-                            Pavilhão Internacional.
+                            Brinquedos; produtos infantis; bebê e maternidade; moda masculina e feminina; roupas
+                            esportivas; acessórios e tecidos; têxteis para casa; tapetes e tapeçarias; artigos de
+                            papelaria e escritório; medicamentos; produtos de saúde e dispositivos médicos; alimentos;
+                            esportes; viagens e produtos de recreação; especialidades tradicionais chinesas; pavilhão
+                            internacional.
                         </p>
                     </div>
                 </article>
             </div>
 
             <a href="#inscricao" class="services__cta" title="Quero ir para China em 2026">
-                QUERO IR PARA CHINA EM 2026
+                QUERO IR PARA A CHINA EM 2026
             </a>
+            <br>
+            <br>
         </section>
 
         <!-- Team Starvision Section -->
+        <br>
         <section class="team-starvision" aria-labelledby="team-title">
             <!-- IMAGEM DE FUNDO: assets/images/team/team-background.png -->
             <div class="team-starvision__overlay"></div>
@@ -419,9 +422,9 @@
 
         <!-- Services Section -->
         <section class="services" aria-labelledby="services-title">
-            <h2 id="services-title" class="services__title">Nossos Serviços<br>Durante a Feira</h2>
-            <p class="services__intro">A Canton Fair é dividida em três fases, cada uma focando em diferentes segmentos
-                de produtos. Conheça o que cada fase oferece e prepare-se para as oportunidades de negócios:</p>
+            <h2 id="services-title" class="services__title">Suporte durante a feira</h2>
+            <p class="services__intro">Durante a Canton Fair, oferecemos suporte estratégico para transformar sua visita
+                em oportunidades reais de negócio. Confira todos os serviços inclusos:</p>
 
             <div class="services__container">
                 <!-- Item 1 -->
@@ -443,7 +446,7 @@
                     <div class="services__content">
                         <h3 class="services__item-title">VISITA ORIENTADA</h3>
                         <p class="services__item-description">Acompanhamento por consultores especializados em sourcing
-                            internacional, com ampla experiência no mercado chinês que vão guiar você pelo gigantesco
+                            internacional, com ampla experiência no mercado chinês, que irão guiá-lo pelo gigantesco
                             centro de convenções de Pazhou.</p>
                     </div>
                 </article>
@@ -467,7 +470,7 @@
                     <div class="services__content">
                         <h3 class="services__item-title">SUPORTE LINGUÍSTICO</h3>
                         <p class="services__item-description">Tradutores profissionais disponíveis para facilitar a
-                            comunicação técnica e comercial com expositores, eliminando barreiras de negociação.</p>
+                            comunicação técnica e comercial com expositores, eliminando barreiras à negociação.</p>
                     </div>
                 </article>
 
@@ -490,7 +493,7 @@
                     <div class="services__content">
                         <h3 class="services__item-title">ANÁLISE DE FORNECEDORES E CUSTOS</h3>
                         <p class="services__item-description">Assessoria na verificação de credenciais, capacidade
-                            produtiva e confiabilidade dos potenciais fornecedores, reduzindo riscos nas futuras
+                            produtiva e confiabilidade dos potenciais fornecedores, reduzindo os riscos em futuras
                             operações.</p>
                     </div>
                 </article>
@@ -513,21 +516,23 @@
                     </div>
                     <div class="services__content">
                         <h3 class="services__item-title">CONSOLIDAÇÃO DO DIA</h3>
-                        <p class="services__item-description">Sessão de debriefing em grupo para compartilhar
-                            descobertas, solucionar dúvidas e planejar estrategicamente as visitas dos próximos dias.
+                        <p class="services__item-description">Reunião em grupo para compartilhar
+                            descobertas, solucionar dúvidas e planejar, de forma estratégica, as visitas dos próximos
+                            dias.
                         </p>
                     </div>
                 </article>
             </div>
 
             <a href="#inscricao" class="services__cta" title="Quero ir para China em 2026">
-                QUERO IR PARA CHINA EM 2026
+                SAIBA MAIS
             </a>
         </section>
 
         <!-- Incluso na Missão Section -->
         <section class="incluso" aria-labelledby="incluso-title" id="services">
-            <h2 id="incluso-title" class="incluso__title">O que está incluso na<br>Missão</h2>
+            <br>
+            <h2 id="incluso-title" class="incluso__title">Pacote Missão Código China</h2>
 
             <!-- Cards como HTML real -->
             <div class="incluso__container">
@@ -538,9 +543,9 @@
                         <li class="incluso__item">
                             <span class="material-icons incluso__icon">computer</span>
                             <div class="incluso__item-content">
-                                <strong class="incluso__item-title">WorkShops Online</strong>
-                                <p class="incluso__item-text">Workshop de preparação sobre estratégias de negociação e
-                                    dicas sobre cultura, negócios e importação, aulas de mandarim e muito mais.</p>
+                                <strong class="incluso__item-title">Workshops Online</strong>
+                                <p class="incluso__item-text">Workshop de preparação para a viagem com estratégias de
+                                    negociação, dicas sobre cultura e importação, aulas de mandarim e muito mais.</p>
                             </div>
                         </li>
                         <li class="incluso__item">
@@ -549,6 +554,22 @@
                                 <strong class="incluso__item-title">Consultoria Especializada</strong>
                                 <p class="incluso__item-text">Orientação de especialistas em comércio internacional
                                     antes, durante e depois da missão.</p>
+                            </div>
+                        </li>
+                        <li class="incluso__item">
+                            <span class="material-icons incluso__icon">language</span>
+                            <div class="incluso__item-content">
+                                <strong class="incluso__item-title">Aulas de Mandarim</strong>
+                                <p class="incluso__item-text">Programa de introdução ao mandarim, focado em situações
+                                    práticas de negócios e interação cultural.</p>
+                            </div>
+                        </li>
+                        <li class="incluso__item">
+                            <span class="material-icons incluso__icon">card_giftcard</span>
+                            <div class="incluso__item-content">
+                                <strong class="incluso__item-title">Material Exclusivo</strong>
+                                <p class="incluso__item-text">Kit Missão Código China com agenda, caneta, mala,
+                                    camiseta, garrafa, entre outros itens.</p>
                             </div>
                         </li>
                     </ul>
@@ -586,15 +607,14 @@
                             <span class="material-icons incluso__icon">confirmation_number</span>
                             <div class="incluso__item-content">
                                 <strong class="incluso__item-title">Ingressos para Feira</strong>
-                                <p class="incluso__item-text">Acesso garantido Canton Fair.</p>
+                                <p class="incluso__item-text">Acesso garantido à Canton Fair.</p>
                             </div>
                         </li>
                         <li class="incluso__item">
                             <span class="material-icons incluso__icon">workspace_premium</span>
                             <div class="incluso__item-content">
-                                <strong class="incluso__item-title">Material e Certificação</strong>
-                                <p class="incluso__item-text">Kit de participante e certificado oficial de participação
-                                    na missão.</p>
+                                <strong class="incluso__item-title">Certificação</strong>
+                                <p class="incluso__item-text">Certificado oficial Missão Código China.</p>
                             </div>
                         </li>
                     </ul>
@@ -607,16 +627,34 @@
                         <li class="incluso__item">
                             <span class="material-icons incluso__icon">translate</span>
                             <div class="incluso__item-content">
-                                <strong class="incluso__item-title">Tradução e Suporte</strong>
-                                <p class="incluso__item-text">Assistência em mandarim e inglês durante as negociações e
-                                    visitas.</p>
+                                <strong class="incluso__item-title">Tradução Profissional (Mandarim e Inglês)</strong>
+                                <p class="incluso__item-text">Assistência linguística especializada em mandarim e inglês
+                                    durante negociações, reuniões e interações na Canton Fair, garantindo precisão,
+                                    clareza e segurança na comunicação.</p>
+                            </div>
+                        </li>
+                        <li class="incluso__item">
+                            <span class="material-icons incluso__icon">explore</span>
+                            <div class="incluso__item-content">
+                                <strong class="incluso__item-title">Suporte Operacional em Campo</strong>
+                                <p class="incluso__item-text">Acompanhamento local contínuo para apoio em agendas,
+                                    deslocamentos, reuniões, imprevistos e necessidades práticas durante toda a missão.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="incluso__item">
+                            <span class="material-icons incluso__icon">temple_buddhist</span>
+                            <div class="incluso__item-content">
+                                <strong class="incluso__item-title">Experiência Cultural e Turismo</strong>
+                                <p class="incluso__item-text">Vivência cultural e turística nas cidades onde a Canton
+                                    Fair acontece, com visitas guiadas.</p>
                             </div>
                         </li>
                         <li class="incluso__item">
                             <span class="material-icons incluso__icon">restaurant</span>
                             <div class="incluso__item-content">
                                 <strong class="incluso__item-title">Jantar de Networking</strong>
-                                <p class="incluso__item-text">Jantar tradicional Chinês com grupo de Fornecedores
+                                <p class="incluso__item-text">Jantar tradicional chinês com grupo de fornecedores
                                     selecionados.</p>
                             </div>
                         </li>
@@ -625,29 +663,102 @@
             </div>
 
             <a href="#inscricao" class="incluso__cta" title="Quero ir para China em 2026">
-                QUERO IR PARA CHINA EM 2026
+                QUERO IR PARA A CHINA EM 2026
             </a>
+            <br>
         </section>
 
         <!-- Contact Form Section -->
         <section id="inscricao" class="contact-form" aria-labelledby="form-title">
             <div class="contact-form__container">
+                <br>
                 <header class="contact-form__header">
-                    <h2 class="contact-form__title">Visite a china com a equipe Starvision</h2>
-                    <p class="contact-form__subtitle">Preencha o formulário agora mesmo e recebo uma PROPOSTA
-                        personalizada para sua empresa!</p>
+                    <h2 class="contact-form__title">Participe da Missão Código China com a Starvision</h2>
+                    <p class="contact-form__subtitle">Preencha o formulário e converse com um de nossos especialistas.
+                    </p>
                 </header>
                 <div class="contact-form__row">
-                    <!-- Typeform Embed -->
-                    <div data-tf-live="01KE86QRKK4F77RDMCA1P2CGSS"></div>
-                    <script src="https://embed.typeform.com/next/embed.js"></script>
+                    <!-- Formulário EmailJS -->
+                    <div class="starvision-form-wrapper">
+                        <form id="starvisionForm" class="starvision-form">
+                            <!-- Nome -->
+                            <div class="form-field">
+                                <label for="nome" class="form-label">
+                                    <span class="label-text">Nome: *</span>
+                                </label>
+                                <input type="text" id="nome" name="nome" class="form-input"
+                                    placeholder="Responda aqui..." required>
+                            </div>
+
+                            <!-- Empresa -->
+                            <div class="form-field">
+                                <label for="empresa" class="form-label">
+                                    <span class="label-text">Empresa: *</span>
+                                </label>
+                                <input type="text" id="empresa" name="empresa" class="form-input"
+                                    placeholder="Nome da empresa" required>
+                            </div>
+
+                            <!-- WhatsApp -->
+                            <div class="form-field">
+                                <label for="whatsapp" class="form-label">
+                                    <span class="label-text">Whatsapp: *</span>
+                                </label>
+                                <input type="tel" id="whatsapp" name="whatsapp" class="form-input"
+                                    placeholder="(11) 99999-9999" pattern="^\+?( ?[\(]?[\-]?[0-9][\)]?){6,13}$"
+                                    required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-field">
+                                <label for="email" class="form-label">
+                                    <span class="label-text">E-mail: *</span>
+                                </label>
+                                <input type="email" id="email" name="email" class="form-input"
+                                    placeholder="seuemail@exemplo.com"
+                                    pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9_\-]+[.]+[a-zA-Z0-9\-.]{2,61}$" required>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="form-submit-btn">
+                                <span class="btn-text">CADASTRE-SE</span>
+                                <span class="btn-loader" style="display: none;">
+                                    <span class="spinner"></span>
+                                    Enviando...
+                                </span>
+                            </button>
+
+                            <!-- Success/Error Messages -->
+                            <div class="form-message success-message" id="successMessage" style="display: none;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span>Formulário enviado com sucesso! Entraremos em contato em breve.</span>
+                            </div>
+
+                            <div class="form-message error-message" id="errorMessage" style="display: none;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12 8V12M12 16H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span id="errorText">Erro ao enviar formulário. Tente novamente.</span>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Social Media Section -->
         <section class="social" aria-label="Redes Sociais">
-            <h2 class="social__title">NOS SIGA NAS REDES SOCIAIS</h2>
+            <h2 class="social__title">Siga Starvision nas Redes Sociais</h2>
 
             <div class="social__container">
                 <a href="https://www.instagram.com/starvisionchina" class="social__link" title="Instagram"
@@ -690,7 +801,11 @@
             </a>
         </div>
     </div>
-
+    <br>
+    <br>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="forms.js"></script>
     <script src="script.js"></script>
 </body>
 

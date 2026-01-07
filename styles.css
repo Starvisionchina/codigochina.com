@@ -396,6 +396,110 @@ img {
     max-width: 450px;
     width: 100%;
     height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Dramatic Entrance with Dark to Light Transition */
+@keyframes logoEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0.85) translateY(30px);
+        filter: drop-shadow(0 0 0 rgba(255, 215, 0, 0)) brightness(0.3) contrast(1.5);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.08) translateY(-8px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.4)) brightness(1.1);
+    }
+}
+
+/* Golden light sweep effect */
+@keyframes goldenSweep {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 120%;
+        opacity: 0;
+    }
+}
+
+/* Breathing Glow - Pulsating Energy Effect */
+@keyframes breathingGlow {
+
+    0%,
+    100% {
+        filter:
+            drop-shadow(0 0 25px rgba(255, 215, 0, 0.4)) drop-shadow(0 0 45px rgba(255, 215, 0, 0.2)) brightness(1.1);
+    }
+
+    50% {
+        filter:
+            drop-shadow(0 0 40px rgba(255, 215, 0, 0.7)) drop-shadow(0 0 70px rgba(255, 215, 0, 0.4)) drop-shadow(0 0 100px rgba(255, 215, 0, 0.2)) brightness(1.25);
+    }
+}
+
+/* Electric Shimmer - Flowing Current */
+@keyframes electricShimmer {
+    0% {
+        transform: translateX(-100%) translateY(-50%) rotate(-5deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(200%) translateY(50%) rotate(-5deg);
+        opacity: 0;
+    }
+}
+
+/* Old subtleGlow removed - replaced by breathingGlow */
+@keyframes subtleGlowOld {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 35px rgba(212, 175, 55, 0.5));
+    }
+}
+
+/* Particle canvas for golden glitters */
+.hero__particles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 500px;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .hero__subtitle {
@@ -756,7 +860,7 @@ img {
 
 .about__stat {
     font-family: var(--font-title);
-    font-size: 0.95rem;
+    font-size: 0.60rem;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 8px;
@@ -764,7 +868,7 @@ img {
 }
 
 .about__stat:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0
 }
 
 .about__info-list {
@@ -826,7 +930,8 @@ img {
 /* Imagens reais da seção About */
 .about__photo {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
+    height: 500px;
     border-radius: 20px;
     object-fit: cover;
 }
@@ -1232,7 +1337,8 @@ img {
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #d4af37;
+    /* border: 5px solid #d4af37; */
+    /* Removed golden border */
     position: relative;
     z-index: 2;
     margin-bottom: -40px;
@@ -1522,6 +1628,7 @@ img {
     color: var(--color-white);
     margin-bottom: 40px;
     line-height: 1.3;
+    text-transform: none;
 }
 
 .incluso__container {
@@ -1679,49 +1786,56 @@ img {
 ======================================== */
 @media (min-width: 993px) {
 
+    /* Desktop Logo Size - Increased by 30px */
+    .hero__logo-missao {
+        max-width: 480px;
+    }
+
     /* Margin-top para cada section específica */
     .stats {
-        margin-top: 100px;
+        margin-top: 110px;
     }
 
     .about {
-        margin-top: 100px;
+        margin-top: 110px;
     }
 
     .jornada {
-        margin-top: 100px;
+        margin-top: 110px;
     }
 
     .mission-objective {
-        margin-top: 100px;
+        margin-top: 110px;
     }
 
     .speakers {
-        margin-top: 100px;
+        margin-top: 110px;
     }
 
     .phases {
-        margin-top: 100px;
+        margin-top: 110px;
     }
 
     .team-starvision {
-        margin-top: 100px;
+        margin-top: 110px;
     }
 
     .services {
-        margin-top: 100px;
+        margin-top: 55px;
+        /* Reduzido pela metade */
     }
 
     .incluso {
-        margin-top: 100px;
+        margin-top: 110px;
     }
 
     .contact-form {
-        margin-top: 100px;
+        margin-top: 110px;
     }
 
     .social {
-        margin-top: 100px;
+        margin-top: 55px;
+        /* Reduzido pela metade */
     }
 }
 
@@ -1849,8 +1963,12 @@ img {
         font-size: 2rem;
         color: #fff;
         margin-bottom: 40px;
-        text-transform: uppercase;
-        font-weight: 700;
+        text-transform: none;
+        /* Removido uppercase */
+        font-weight: 100;
+        /* Thin */
+        font-style: italic;
+        /* Italic */
         line-height: 1.1;
     }
 
@@ -2088,11 +2206,113 @@ img {
 
     .about__info-icon {
         flex-shrink: 0 !important;
-        width: 45px !important;
-        height: 45px !important;
-        margin-bottom: 15px !important;
+        width: 90px !important;
+        /* Aumentado 2x conforme solicitado */
+        height: 90px !important;
+        margin-bottom: 25px !important;
     }
 }
+
+@media (max-width: 768px) {
+
+    /* Margin Top específico para botões e seções mobile */
+    .hero__cta {
+        margin-top: 50px;
+        padding: 20px 50px;
+        /* Aumentando botão */
+        font-size: 1.1rem;
+    }
+
+    .services {
+        margin-top: 33px;
+        /* Ajuste específico solicitado */
+    }
+
+    .phases {
+        margin-top: 90px;
+    }
+
+    .speakers {
+        margin-top: 90px;
+    }
+
+    .mission-objective__cta {
+        margin-top: 50px;
+        display: block;
+        /* Garante que margin funcione */
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+        padding: 20px 50px;
+        /* Aumentando botão */
+        font-size: 1.1rem;
+    }
+
+    /* Aumentando outros botões principais */
+    .services__cta,
+    .phases__cta,
+    .incluso__cta {
+        padding: 20px 50px;
+        font-size: 1.1rem;
+    }
+
+    /* Incluso Styling Mobile */
+    .incluso__title {
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 40px;
+        text-transform: none;
+        /* Removido uppercase */
+        font-weight: 100;
+        /* Thin */
+        font-style: italic;
+        /* Italic */
+        font-family: var(--font-title);
+        /* Garantir fonte */
+    }
+
+    .incluso__title::after {
+        content: '';
+        display: block;
+        width: 60px;
+        /* Bem curta */
+        height: 6px;
+        /* Linha grossa */
+        background-color: var(--color-red-light);
+        margin: 15px auto 0;
+        border-radius: 3px;
+    }
+
+    .incluso__item-title,
+    .incluso__item-text {
+        font-family: 'Agrandir', sans-serif;
+        /* Fonte Agrandir */
+    }
+
+    .incluso__item-title {
+        font-weight: 700;
+        font-size: 1.1rem;
+        /* Ajuste leve para legibilidade */
+    }
+
+    /* Aumentando botões 'do top' (Menu e Scroll Top) */
+    .top-up {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 24px !important;
+    }
+
+    .header__mobile-toggle {
+        width: 40px;
+        height: 28px;
+    }
+
+    .hamburger-line {
+        height: 4px;
+        border-radius: 4px;
+    }
+}
+
 
 /* ========================================
    FLOATING ACTION BUTTONS
@@ -2228,5 +2448,243 @@ img {
         opacity: 1;
         transform: none;
         transition: none;
+    }
+}
+
+/* ========================================
+   STARVISION FORM STYLES (EmailJS)
+======================================== */
+.starvision-form-wrapper {
+    background: linear-gradient(135deg, #A71D2A 0%, #8B1722 100%);
+    border-radius: 12px;
+    padding: 60px 80px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 8px 40px rgba(167, 29, 42, 0.25);
+    border: 1px solid rgba(255, 199, 44, 0.1);
+    box-sizing: border-box;
+}
+
+.starvision-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-label {
+    display: block;
+}
+
+.label-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #F1F1F1;
+    display: block;
+    line-height: 1.4;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    color: #0E000A;
+    background: #F1F1F1;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+.form-input::placeholder {
+    color: #CCCCCC;
+    opacity: 0.7;
+}
+
+.form-input:focus {
+    border-color: #FFC72C;
+    box-shadow: 0 0 0 3px rgba(255, 199, 44, 0.2);
+    transform: translateY(-1px);
+}
+
+.form-input:hover:not(:focus) {
+    border-color: rgba(255, 199, 44, 0.3);
+}
+
+.form-input:invalid:not(:placeholder-shown) {
+    border-color: #ff6b6b;
+}
+
+.form-input:valid:not(:placeholder-shown) {
+    border-color: #51cf66;
+}
+
+/* Submit Button */
+.form-submit-btn {
+    width: 50%;
+    max-width: 300px;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    color: #0E000A;
+    background: #FFC72C;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 199, 44, 0.4);
+}
+
+.form-submit-btn:active {
+    transform: translateY(0);
+}
+
+.form-submit-btn:disabled {
+    background: #CCCCCC;
+    color: #EAEAEA;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-text {
+    display: inline-block;
+}
+
+.btn-loader {
+    display: none;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-submit-btn.loading .btn-text {
+    display: none;
+}
+
+.form-submit-btn.loading .btn-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Spinner Animation */
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #CCCCCC;
+    border-top-color: #A71D2A;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Messages */
+.form-message {
+    padding: 16px 20px;
+    border-radius: 6px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 10px;
+    width: 50%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-message svg {
+    display: none;
+}
+
+.success-message {
+    background: rgba(81, 207, 102, 0.15);
+    border: 1px solid rgba(81, 207, 102, 0.3);
+    color: #51cf66;
+}
+
+.error-message {
+    background: rgba(255, 107, 107, 0.15);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    color: #ff6b6b;
+}
+
+.form-message.show {
+    display: flex;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Form */
+@media (max-width: 768px) {
+    .starvision-form-wrapper {
+        padding: 30px 24px;
+        border-radius: 8px;
+    }
+
+    .starvision-form {
+        gap: 20px;
+    }
+
+    .label-text {
+        font-size: 15px;
+    }
+
+    .form-input {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    .form-submit-btn {
+        padding: 14px 28px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .starvision-form-wrapper {
+        padding: 24px 20px;
+    }
+
+    .starvision-form {
+        gap: 18px;
     }
 }
