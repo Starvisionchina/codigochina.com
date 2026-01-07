@@ -2111,3 +2111,49 @@ img {
         font-size: 24px;
     }
 }
+
+/* ========================================
+   SCROLL REVEAL ANIMATIONS
+======================================== */
+/* Estado inicial: invisível e deslocado para cima */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Estado revelado: visível e na posição correta */
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays escalonados para elementos filhos */
+.scroll-reveal-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.scroll-reveal-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.scroll-reveal-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.scroll-reveal-delay-4 {
+    transition-delay: 0.4s;
+}
+
+.scroll-reveal-delay-5 {
+    transition-delay: 0.5s;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
