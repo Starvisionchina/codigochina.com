@@ -563,13 +563,13 @@ img {
     justify-content: center;
     gap: 60px;
     width: 100%;
-    min-height: 600px;
+    min-height: 555px;
 }
 
 /* Typeform embed container */
 .contact-form__row>div[data-tf-live] {
     width: 100%;
-    min-height: 600px;
+    min-height: 555px;
     border-radius: 12px;
     overflow: hidden;
 }
@@ -1618,6 +1618,57 @@ img {
 .social__link:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(155, 35, 33, 0.5);
+}
+
+/* ========================================
+   GLOBAL SECTION SPACING (DESKTOP ONLY)
+======================================== */
+@media (min-width: 993px) {
+
+    /* Margin-top para cada section específica */
+    .stats {
+        margin-top: 100px;
+    }
+
+    .about {
+        margin-top: 100px;
+    }
+
+    .jornada {
+        margin-top: 100px;
+    }
+
+    .mission-objective {
+        margin-top: 100px;
+    }
+
+    .speakers {
+        margin-top: 100px;
+    }
+
+    .phases {
+        margin-top: 100px;
+    }
+
+    .team-starvision {
+        margin-top: 100px;
+    }
+
+    .services {
+        margin-top: 100px;
+    }
+
+    .incluso {
+        margin-top: 100px;
+    }
+
+    .contact-form {
+        margin-top: 100px;
+    }
+
+    .social {
+        margin-top: 100px;
+    }
 }
 
 /* ========================================
