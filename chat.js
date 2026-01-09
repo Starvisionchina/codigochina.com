@@ -126,7 +126,8 @@
         // CONTATO - Telefone/WhatsApp
         {
             patterns: ['telefone', 'fone', 'ligar', 'whatsapp', 'whats', 'zap', 'número', 'numero', 'celular', 'contato telefone', 'qual o whatsapp', 'qual whatsapp', 'me passa o whatsapp', 'passa o whatsapp', 'qual o telefone', 'qual telefone', 'como falo', 'como contato'],
-            response: () => KNOWLEDGE_BASE.contato.telefone
+            response: () => KNOWLEDGE_BASE.contato.telefone,
+            triggerWhatsApp: true
         },
 
         // CONTATO - Email
