@@ -1,6 +1,6 @@
 /**
  * WhatsApp Chat Widget - Starvision
- * Assistente Virtual "Stela" - Conversa Humanizada
+ * Assistente Virtual "Estela" - Conversa Humanizada
  */
 
 (function () {
@@ -9,7 +9,7 @@
     // Configurações
     const CONFIG = {
         whatsappNumber: '555131031030',
-        botName: 'Stela',
+        botName: 'Estela',
         typingDelay: 1200,
         messageDelay: 600
     };
@@ -106,7 +106,7 @@
                 setTimeout(() => {
                     hideTypingIndicator();
                     const greeting = getGreeting();
-                    const welcomeMessage = `${greeting}, empreendedor, tudo bem?\n\nEu sou a Stela e vou lhe auxiliar. Qual o seu nome?`;
+                    const welcomeMessage = `${greeting}, empreendedor, tudo bem?\n\nEu sou a Estela e vou lhe auxiliar. Qual o seu nome?`;
                     addBotMessage(welcomeMessage);
                     chatState.step = 1;
                 }, CONFIG.typingDelay);
