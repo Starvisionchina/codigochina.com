@@ -188,7 +188,11 @@
             const button = document.createElement('button');
             button.className = 'chat-interest-btn';
             button.textContent = option.label;
-            button.onclick = () => handleInterestSelection(option);
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleInterestSelection(option);
+            });
             buttonsContainer.appendChild(button);
         });
 
