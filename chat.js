@@ -667,19 +667,8 @@
 
     function getWhatsAppLink() {
         const name = chatState.userName || 'Visitante';
-        const topics = chatState.conversationHistory
-            .filter(h => h.role === 'user')
-            .slice(-3)
-            .map(h => h.message)
-            .join(' | ');
 
-        let message = `Olá! Me chamo ${name}.\n\nConversei com a Estela e gostaria de mais informações sobre a Missão Código China.`;
-
-        if (topics) {
-            message += `\n\n[Assuntos: ${topics.substring(0, 100)}]`;
-        }
-
-        message += `\n\n[Origem: codigochina.com]`;
+        const message = `Olá, me chamo ${name}!\n\nConversei com a Estela e gostaria de mais informações sobre a Missão Código China!`;
 
         return `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
     }
