@@ -442,6 +442,40 @@
     display: none;
 }
 
+/* Interest Selection Buttons */
+.chat-interest-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+    animation: messageIn 0.3s ease-out;
+}
+
+.chat-interest-btn {
+    padding: 14px 20px;
+    background: #fff;
+    border: 2px solid #8D2424;
+    border-radius: 12px;
+    color: #8D2424;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.chat-interest-btn:hover {
+    background: linear-gradient(135deg, #8D2424 0%, #A71D2A 100%);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(141, 36, 36, 0.3);
+}
+
+.chat-interest-btn:active {
+    transform: translateY(0);
+}
+
 /* Responsive - Mobile Fullscreen */
 @media (max-width: 768px) {
     .whatsapp-chat-widget {

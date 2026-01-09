@@ -1,6 +1,6 @@
 /**
  * WhatsApp Chat Widget - Starvision
- * Sistema de chat interativo com mensagem automática
+ * Assistente Virtual "Estrela" - Conversa Humanizada
  */
 
 (function () {
@@ -9,36 +9,40 @@
     // Configurações
     const CONFIG = {
         whatsappNumber: '555131031030',
-        initialMessage: 'A Canton Fair é onde o mundo inteiro descobre o futuro, e a Starvision é o seu guia nessa jornada. Prepare-se para elevar o nível do seu negócio. Qual o seu nome?',
-        botName: 'Starvision',
-        typingDelay: 1500,
-        messageDelay: 800
+        botName: 'Estrela',
+        typingDelay: 1200,
+        messageDelay: 600
     };
 
     // Estado do chat
     let chatState = {
         isOpen: false,
         userName: '',
-        step: 0,
-        conversationData: {}
+        userInterest: '',
+        step: 0
     };
 
-    // Perguntas do fluxo de conversa
-    const conversationFlow = [
-        {
-            question: CONFIG.initialMessage,
-            field: 'name',
-            nextMessage: (name) => `Prazer em conhecê-lo(a), ${name}! 🤝\n\nVocê tem interesse em participar da Missão Código China 2026 para a Canton Fair?`
-        },
-        {
-            question: null, // Será definido dinamicamente
-            field: 'interest',
-            nextMessage: () => `Excelente! 🎉\n\nPara darmos continuidade, vou te conectar diretamente com nosso especialista no WhatsApp. Ele vai te passar todas as informações sobre a missão.\n\nClique no botão abaixo para continuar:`
-        }
+    // Opções de interesse
+    const interestOptions = [
+        { id: 'produtos', label: '🛒 Novos Produtos', value: 'buscar novos produtos' },
+        { id: 'tecnologias', label: '💡 Conhecer Tecnologias', value: 'conhecer tecnologias' },
+        { id: 'networking', label: '🤝 Fazer Networking', value: 'fazer networking' }
     ];
 
     // Elementos DOM
     let elements = {};
+
+    // Obter saudação baseada no horário
+    function getGreeting() {
+        const hour = new Date().getHours();
+        if (hour >= 5 && hour < 12) {
+            return 'Bom dia';
+        } else if (hour >= 12 && hour < 18) {
+            return 'Boa tarde';
+        } else {
+            return 'Boa noite';
+        }
+    }
 
     // Inicialização
     function init() {
@@ -102,7 +106,9 @@
                 showTypingIndicator();
                 setTimeout(() => {
                     hideTypingIndicator();
-                    addBotMessage(CONFIG.initialMessage);
+                    const greeting = getGreeting();
+                    const welcomeMessage = `Oie! ${greeting}! ✨\n\nTudo bem? Eu sou a Estrela, sua guia virtual aqui na Starvision.\n\nCom quem eu tenho o prazer de conversar?`;
+                    addBotMessage(welcomeMessage);
                     chatState.step = 1;
                 }, CONFIG.typingDelay);
             }, 500);
@@ -142,45 +148,87 @@
             case 1:
                 // Usuário enviou o nome
                 chatState.userName = message;
-                chatState.conversationData.name = message;
 
                 setTimeout(() => {
                     showTypingIndicator();
                     setTimeout(() => {
                         hideTypingIndicator();
-                        const greeting = conversationFlow[0].nextMessage(message);
+
+                        const greeting = `Muito prazer, ${message}! 😊\n\nSeja bem-vindo(a) à Starvision!\n\nVi aqui que você se interessou pela nossa Missão Código China 2026. Essa imersão vai ser transformadora!\n\nPara eu te conectar com o consultor ideal para o seu perfil, me conta uma coisa: o seu foco principal nessa viagem seria buscar:`;
+
                         addBotMessage(greeting);
+
+                        // Adiciona os botões de seleção após a mensagem
+                        setTimeout(() => {
+                            addInterestButtons();
+                        }, 400);
+
                         chatState.step = 2;
                     }, CONFIG.typingDelay);
                 }, CONFIG.messageDelay);
                 break;
 
             case 2:
-                // Usuário respondeu sobre interesse
-                chatState.conversationData.interest = message;
-
-                setTimeout(() => {
-                    showTypingIndicator();
-                    setTimeout(() => {
-                        hideTypingIndicator();
-                        const finalMessage = conversationFlow[1].nextMessage();
-                        addBotMessage(finalMessage);
-
-                        // Adiciona botão de WhatsApp
-                        setTimeout(() => {
-                            addWhatsAppButton();
-                        }, 500);
-
-                        chatState.step = 3;
-                    }, CONFIG.typingDelay);
-                }, CONFIG.messageDelay);
+                // Este step é tratado pelos botões
                 break;
 
             case 3:
-                // Chat já concluído, enviar para WhatsApp
+                // Chat já concluído, qualquer mensagem redireciona para o WhatsApp
                 redirectToWhatsApp();
                 break;
         }
+    }
+
+    // Adicionar botões de interesse
+    function addInterestButtons() {
+        const buttonsContainer = document.createElement('div');
+        buttonsContainer.className = 'chat-interest-buttons';
+
+        interestOptions.forEach(option => {
+            const button = document.createElement('button');
+            button.className = 'chat-interest-btn';
+            button.textContent = option.label;
+            button.onclick = () => handleInterestSelection(option);
+            buttonsContainer.appendChild(button);
+        });
+
+        elements.chatMessages.appendChild(buttonsContainer);
+        scrollToBottom();
+
+        // Esconde o input enquanto os botões estão visíveis
+        elements.chatInputArea.classList.add('hidden');
+    }
+
+    // Lidar com seleção de interesse
+    function handleInterestSelection(option) {
+        chatState.userInterest = option.value;
+
+        // Remove os botões
+        const buttonsContainer = document.querySelector('.chat-interest-buttons');
+        if (buttonsContainer) {
+            buttonsContainer.remove();
+        }
+
+        // Adiciona a seleção como mensagem do usuário
+        addUserMessage(option.label);
+
+        setTimeout(() => {
+            showTypingIndicator();
+            setTimeout(() => {
+                hideTypingIndicator();
+
+                const finalMessage = `Excelente escolha! 🎉\n\nPara darmos continuidade, vou te conectar diretamente com nosso especialista no WhatsApp.\n\nEle vai te passar todas as informações sobre a missão e como você pode ${option.value}.\n\nClique no botão abaixo para continuar:`;
+
+                addBotMessage(finalMessage);
+
+                // Adiciona botão de WhatsApp
+                setTimeout(() => {
+                    addWhatsAppButton();
+                }, 500);
+
+                chatState.step = 3;
+            }, CONFIG.typingDelay);
+        }, CONFIG.messageDelay);
     }
 
     // Adicionar mensagem do bot
@@ -236,22 +284,14 @@
 
         elements.chatMessages.appendChild(buttonEl);
         scrollToBottom();
-
-        // Esconde a área de input
-        elements.chatInputArea.classList.add('hidden');
     }
 
-    // Gerar link do WhatsApp com mensagem pré-definida
+    // Gerar link do WhatsApp com mensagem humanizada
     function getWhatsAppLink() {
-        const name = chatState.conversationData.name || 'Visitante';
-        const interest = chatState.conversationData.interest || '';
+        const name = chatState.userName || 'Visitante';
 
-        let message = `Olá! Meu nome é ${name}.\n\n`;
-        message += `Tenho interesse na Missão Código China 2026.\n`;
-        if (interest) {
-            message += `Sobre a missão: ${interest}\n`;
-        }
-        message += `\nGostaria de saber mais informações!`;
+        // Mensagem simplificada e humanizada
+        let message = `Olá! Me chamo ${name} 👋\n\nTenho interesse na Missão Código China 2026 e gostaria de saber mais detalhes.`;
 
         return `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
     }
