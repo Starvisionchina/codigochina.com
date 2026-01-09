@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat WhatsApp - Starvision</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="chat-demo-page">
+    <div class="chat-demo-container">
+        <h1>Demonstração do Chat WhatsApp</h1>
+        <p>Clique no ícone do WhatsApp no canto inferior direito para testar o chat.</p>
+    </div>
+
+    <!-- WhatsApp Chat Widget -->
+    <div id="whatsappChatWidget" class="whatsapp-chat-widget">
+        <!-- Chat Window -->
+        <div class="chat-window" id="chatWindow">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="chat-header__avatar">
+                    <img src="assets/images/chat/Logo-chat.png" alt="Starvision" class="chat-header__avatar-img">
+                    <span class="chat-header__status"></span>
+                </div>
+                <div class="chat-header__info">
+                    <h3 class="chat-header__name">Starvision</h3>
+                    <p class="chat-header__subtitle">Especialista em Negócios China</p>
+                </div>
+                <button class="chat-header__close" id="closeChatBtn" aria-label="Fechar chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Chat Body -->
+            <div class="chat-body" id="chatBody">
+                <div class="chat-body__background"></div>
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be inserted here dynamically -->
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-area" id="chatInputArea">
+                <form class="chat-input-form" id="chatInputForm">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Digite sua mensagem..."
+                        autocomplete="off">
+                    <button type="submit" class="chat-send-btn" id="chatSendBtn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Floating WhatsApp Button -->
+        <button class="whatsapp-float-btn" id="whatsappFloatBtn" aria-label="Abrir chat do WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-float-btn__badge">1</span>
+        </button>
+    </div>
+
+    <script src="chat.js"></script>
+</body>
+
+</html>
