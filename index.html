@@ -70,14 +70,20 @@
     <link rel="icon" type="image/x-icon" href="assets/images/header/favicon.ico">
     <link rel="apple-touch-icon" href="assets/images/header/logo-starvision.png">
 
+    <!-- Preload LCP Image -->
+    <link rel="preload" as="image" href="assets/images/hero/hero-background.webp" type="image/webp">
+    <link rel="preload" as="image" href="assets/images/hero/logo-missao-china.webp" type="image/webp">
+
     <!-- Google Fonts - Open Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" media="print"
+        onload="this.media='all'">
 
-    <!-- Font Awesome for social icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Font Awesome for social icons (defer loading) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        media="print" onload="this.media='all'">
 
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -121,7 +127,7 @@
                 <picture>
                     <source srcset="assets/images/hero/hero-background.webp" type="image/webp">
                     <img src="assets/images/hero/hero-background.jpg" alt="Canton Fair China - Imagem de fundo"
-                        class="hero__background-img" width="1920" height="1080">
+                        class="hero__background-img" width="1920" height="1080" fetchpriority="high">
                 </picture>
 
 
@@ -135,7 +141,7 @@
                         <source srcset="assets/images/hero/logo-missao-china.webp" type="image/webp">
                         <img src="assets/images/hero/logo-missao-china.png"
                             alt="Logo Missão Código China 2026 - Cavalo com design de circuito eletrônico"
-                            class="hero__logo-missao" width="400" height="400">
+                            class="hero__logo-missao" width="400" height="400" fetchpriority="high">
                     </picture>
                     <h1 id="hero-title" class="sr-only">Missão Código China 2026</h1>
                 </div>
@@ -295,10 +301,11 @@
                 <!-- Vídeo à direita -->
                 <div class="jornada__video-wrapper">
                     <!-- VIDEO: assets/videos/video-jornada.mp4 -->
-                    <video autoplay loop class="jornada__video" src="assets/videos/video-jornada.mp4" autoplay loop
-                        playsinline controls poster="assets/images/jornada/video-poster.webp"
+                    <video class="jornada__video" preload="none" playsinline controls
+                        poster="assets/images/jornada/video-poster.webp"
                         aria-label="Vídeo de apresentação da jornada na China">
-                        aria-label="Vídeo de apresentação da jornada na China">
+                        <source src="assets/videos/video-jornada.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos HTML5.
                     </video>
                 </div>
             </div>
