@@ -1129,6 +1129,7 @@ img {
 .speakers {
     padding: 0 0;
     text-align: center;
+    overflow: hidden;
 }
 
 .speakers__title {
