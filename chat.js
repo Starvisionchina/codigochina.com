@@ -1,7 +1,7 @@
 /**
  * WhatsApp Chat Widget - Starvision
  * Assistente Virtual "Estela" - Agente de IA Humanizada
- * Conversa sobre Canton Fair e Starvision China
+ * Conversa natural sobre Canton Fair e Starvision China
  */
 
 (function () {
@@ -13,109 +13,218 @@
         botName: 'Estela',
         typingDelay: 1500,
         messageDelay: 800,
-        maxInteractionsBeforeWhatsApp: 4
+        maxInteractionsBeforeWhatsApp: 5
     };
 
-    // Base de Conhecimento
+    // Base de Conhecimento Expandida
     const KNOWLEDGE_BASE = {
         cantonFair: {
-            sobre: "A Canton Fair é a maior e mais completa feira multissetorial do planeta! 🌏 Sediada em Guangzhou, na China, acontece duas vezes por ano e reúne mais de 60 mil estandes e 280 mil compradores internacionais.",
-            datas: "A próxima edição será em Abril de 2026! 📅\n\n• Fase 1: 15-19 de Abril (Eletrônicos, máquinas, tecnologia)\n• Fase 2: 23-27 de Abril (Casa, decoração, mobiliário)\n• Fase 3: 1-4 de Maio (Moda, brinquedos, têxteis)",
-            fases: "São 3 fases, cada uma com foco diferente:\n\n🔌 Fase 1: Eletrônicos, máquinas e tecnologia\n🏠 Fase 2: Casa, decoração e mobiliário\n👗 Fase 3: Moda, brinquedos e têxteis\n\nQual fase tem mais a ver com seu negócio?",
-            local: "A feira acontece no Canton Fair Complex, em Guangzhou, China! É 20 vezes maior que a Expo São Paulo! 😮",
-            tamanho: "A Canton Fair é GIGANTE! São mais de 60 mil estandes, mais de 3.500 produtos inéditos por edição e é 20 vezes maior que a Expo SP!"
+            geral: [
+                "A Canton Fair é simplesmente a maior feira de negócios do mundo! 🌍 Ela acontece em Guangzhou, na China, duas vezes por ano - em abril e outubro. Imagina um lugar com mais de 60 mil estandes? É impressionante!",
+                "Sabe a Canton Fair? É o sonho de todo importador! Lá você encontra fornecedores de praticamente tudo que existe. São mais de 280 mil compradores de todo o mundo visitando!",
+                "A Canton Fair existe desde 1957 e é o maior evento de comércio exterior da China! Por lá passam mais de 3.500 produtos inéditos a cada edição. É uma imersão total em oportunidades!"
+            ],
+            historia: "A Canton Fair começou em 1957 e é a feira de importação e exportação mais antiga da China! Desde então, já são mais de 130 edições conectando empresários do mundo inteiro. 📜",
+            experiencia: "Participar da Canton Fair é uma experiência única! Você caminha por pavilhões gigantescos, conhece fornecedores pessoalmente, testa produtos na hora e negocia diretamente. É muito diferente de comprar pela internet!",
+            datas: "A próxima edição será em Abril de 2026! 📅\n\n• Fase 1: 15-19 de Abril\n• Fase 2: 23-27 de Abril\n• Fase 3: 1-4 de Maio\n\nCada fase foca em setores diferentes!",
+            fase1: "A Fase 1 (15-19 de Abril) é focada em tecnologia e indústria! 🔌\n\nVocê encontra: eletrônicos, eletrodomésticos, máquinas industriais, veículos elétricos, iluminação, energia solar, ferramentas e muito mais.",
+            fase2: "A Fase 2 (23-27 de Abril) é o paraíso da decoração e casa! 🏠\n\nTem de tudo: cerâmicas, utensílios de cozinha, vidros artísticos, móveis, materiais de construção, presentes, relógios... É linda!",
+            fase3: "A Fase 3 (1-4 de Maio) é o mundo da moda e lifestyle! 👗\n\nEncontra-se: roupas, tecidos, brinquedos, produtos infantis, artigos esportivos, papelaria, alimentos e até produtos tradicionais chineses.",
+            local: "A feira acontece no Canton Fair Complex, em Guangzhou (ou Cantão), sul da China! É um complexo ENORME - 20 vezes maior que a Expo São Paulo! 😮\n\nGuangzhou é uma cidade incrível, moderna e cheia de história.",
+            tamanho: "Os números impressionam! 📊\n\n• Mais de 60 mil estandes\n• 280 mil compradores internacionais\n• 3.500+ produtos inéditos por edição\n• 20x maior que a Expo SP\n\nÉ muita coisa para ver em poucos dias, por isso ter guia é essencial!",
+            porqueIr: "Por que ir à Canton Fair? 🤔\n\n1️⃣ Negociar direto com fabricantes (melhores preços!)\n2️⃣ Ver e testar produtos pessoalmente\n3️⃣ Descobrir lançamentos antes da concorrência\n4️⃣ Criar relacionamentos duradouros\n5️⃣ Entender a cultura de negócios chinesa\n\nÉ uma experiência que muda sua visão de negócios!"
         },
         starvision: {
-            sobre: "A Starvision tem mais de 20 anos de experiência conectando empresários brasileiros ao mercado chinês! 🤝 Somos especialistas em importação, exportação e missões empresariais à China.",
-            missao: "A Missão Código China é nossa imersão completa na Canton Fair! ✈️\n\nInclui: passagens aéreas, hospedagem premium, tradutores, visitas guiadas, workshops de preparação e muito mais!",
-            pacote: "O pacote da Missão Código China inclui:\n\n✈️ Passagens aéreas internacionais\n🏨 Hospedagem premium com café da manhã\n🚄 Trem bala entre cidades\n🎫 Ingressos para a feira\n👨‍💼 Consultoria especializada\n🗣️ Tradutores profissionais\n📚 Workshops de preparação\n🎁 Kit exclusivo da missão",
-            preco: "O investimento varia conforme o tipo de pacote e acomodação escolhidos. Posso te conectar com nosso time comercial para uma proposta personalizada! 💬",
-            equipe: "Nossa missão é liderada por Rodrigo Lima Fernandes (CEO da Starvision, 20+ anos de experiência com China) e Antonio Fogaça (especialista em escalar negócios e exportação)! 👨‍💼"
+            sobre: "A Starvision nasceu da paixão por conectar o Brasil à China! 🤝\n\nSão mais de 20 anos ajudando empresários brasileiros a importar, exportar e fazer negócios na Ásia. Nosso CEO, Rodrigo Lima, já auditou mais de 300 fábricas!",
+            missao: "A Missão Código China é nossa imersão completa na Canton Fair! ✈️\n\nNão é só uma viagem - é uma experiência de transformação. Você vai preparado, acompanhado e com todo suporte para fazer negócios de verdade!",
+            pacote: "Na Missão Código China você tem tudo incluso:\n\n✈️ Passagens aéreas internacionais\n🏨 Hospedagem premium com café da manhã\n🚄 Trem bala entre cidades\n🎫 Ingressos para a Canton Fair\n👨‍💼 Consultoria antes, durante e depois\n🗣️ Tradutores profissionais in loco\n📚 Workshops de preparação online\n🎁 Kit exclusivo da missão\n🍜 Experiências culturais e gastronômicas",
+            diferenciais: "O que faz a Missão Código China especial? ⭐\n\n• Preparação antes da viagem (workshops, aulas de mandarim)\n• Consultores especializados te acompanhando na feira\n• Tradutores para facilitar as negociações\n• Análise de fornecedores e verificação de credenciais\n• Networking com outros empresários brasileiros\n• Suporte pós-viagem para suas importações",
+            equipe: "Nossa missão é liderada por especialistas experientes! 👨‍💼\n\n**Rodrigo Lima Fernandes** - CEO da Starvision, 20+ anos de experiência, já participou de 18 edições da Canton Fair e auditou mais de 300 fábricas.\n\n**Antonio Fogaça** - Mestre em escalar negócios e internacionalizar marcas, empresário de sucesso com faturamento 7 dígitos mensais."
         },
         servicos: {
-            feira: "Durante a Canton Fair oferecemos:\n\n👉 Visita orientada por consultores\n👉 Tradutores profissionais\n👉 Análise de fornecedores\n👉 Consolidação diária das descobertas\n👉 Networking com outros empresários",
-            importacao: "Além da missão, a Starvision oferece suporte completo de importação e exportação! Nossa equipe pode ajudar desde a primeira negociação até a chegada do produto no Brasil. 📦"
+            feira: "Durante a Canton Fair você terá:\n\n🧭 Visita orientada pelos consultores\n🗣️ Tradutores profissionais (mandarim e inglês)\n📋 Análise de fornecedores e custos\n📝 Consolidação diária das descobertas\n🤝 Networking com o grupo\n\nNunca estará sozinho na feira!",
+            importacao: "A Starvision também oferece suporte completo de importação e exportação! 📦\n\nDesde encontrar o fornecedor certo até a chegada do produto no Brasil, nossa equipe pode te ajudar em todo o processo.",
+            preparacao: "Antes de embarcar, você passa por uma preparação completa! 📚\n\n• Workshops online sobre negociação\n• Dicas culturais e de etiqueta\n• Aulas básicas de mandarim\n• Estratégias para a feira\n• Orientação sobre seu segmento específico"
+        },
+        china: {
+            cultura: "A China é fascinante! 🇨🇳\n\nA cultura de negócios lá é diferente - o relacionamento pessoal (Guanxi) é muito valorizado. Por isso fazemos jantares de networking e imersões culturais durante a missão!",
+            idioma: "Não se preocupe com o idioma! 🗣️\n\nNossos tradutores profissionais te acompanham nas negociações. E antes da viagem você ainda tem aulas de mandarim básico para situações do dia a dia!",
+            seguranca: "A China é muito segura para turistas de negócios! 🔒\n\nGuangzhou é uma cidade moderna e organizada. Além disso, você estará sempre acompanhado pela equipe Starvision e pelos guias locais."
         }
     };
 
     // Padrões de intenção e respostas
     const INTENTIONS = [
+        // Saudações
         {
-            patterns: ['oi', 'olá', 'ola', 'hey', 'eai', 'e ai', 'bom dia', 'boa tarde', 'boa noite', 'oie', 'oii'],
+            patterns: ['oi', 'olá', 'ola', 'hey', 'eai', 'e ai', 'bom dia', 'boa tarde', 'boa noite', 'oie', 'oii', 'opa'],
             response: () => {
                 const greeting = getGreeting();
-                return `${greeting}! 😊 Tudo bem com você?\n\nEu sou a Estela, assistente virtual da Starvision. Estou aqui para te ajudar com informações sobre a Missão Código China e a Canton Fair!\n\nComo posso te ajudar hoje?`;
+                return `${greeting}! 😊 Que bom te ver por aqui!\n\nEu sou a Estela, assistente virtual da Starvision. Posso te contar tudo sobre a Canton Fair e nossa Missão Código China!\n\nSobre o que gostaria de saber?`;
             },
             isGreeting: true
         },
+        // Canton Fair - Geral
         {
-            patterns: ['canton fair', 'cantonfair', 'feira', 'feira na china', 'maior feira'],
-            response: () => KNOWLEDGE_BASE.cantonFair.sobre
+            patterns: ['canton fair', 'cantonfair', 'maior feira', 'o que é a feira', 'sobre a feira', 'me fala da feira', 'conta sobre a feira'],
+            response: () => getRandomItem(KNOWLEDGE_BASE.cantonFair.geral)
         },
+        // Canton Fair - Experiência
         {
-            patterns: ['quando', 'data', 'datas', 'abril', 'maio', 'quando acontece', 'quando é', 'período'],
+            patterns: ['como é', 'experiência', 'experiencia', 'vale a pena', 'é bom'],
+            response: () => KNOWLEDGE_BASE.cantonFair.experiencia
+        },
+        // Canton Fair - Por que ir
+        {
+            patterns: ['por que ir', 'porque ir', 'vantagens', 'benefícios de ir', 'beneficios de ir', 'motivos'],
+            response: () => KNOWLEDGE_BASE.cantonFair.porqueIr
+        },
+        // Canton Fair - História
+        {
+            patterns: ['história', 'historia', 'desde quando', 'quantos anos', 'há quanto tempo'],
+            response: () => KNOWLEDGE_BASE.cantonFair.historia
+        },
+        // Datas
+        {
+            patterns: ['quando', 'data', 'datas', 'abril', 'maio', 'quando acontece', 'quando é', 'período', 'periodo'],
             response: () => KNOWLEDGE_BASE.cantonFair.datas
         },
+        // Fases - Geral
         {
-            patterns: ['fase', 'fases', 'setores', 'segmentos', 'categorias'],
-            response: () => KNOWLEDGE_BASE.cantonFair.fases
+            patterns: ['fase', 'fases', 'setores', 'segmentos', 'categorias', 'divisão', 'divisao'],
+            response: () => "A Canton Fair é dividida em 3 fases! 📅\n\n🔌 Fase 1 (15-19 Abril): Eletrônicos e tecnologia\n🏠 Fase 2 (23-27 Abril): Casa e decoração\n👗 Fase 3 (1-4 Maio): Moda e lifestyle\n\nQual fase combina mais com seu negócio? Posso detalhar qualquer uma delas!"
         },
+        // Fase 1
         {
-            patterns: ['onde', 'local', 'localização', 'cidade', 'guangzhou', 'endereço'],
+            patterns: ['fase 1', 'fase1', 'eletrônico', 'eletronico', 'tecnologia', 'máquina', 'maquina', 'industrial'],
+            response: () => KNOWLEDGE_BASE.cantonFair.fase1
+        },
+        // Fase 2
+        {
+            patterns: ['fase 2', 'fase2', 'decoração', 'decoracao', 'casa', 'móvel', 'movel', 'mobília', 'mobilia', 'cozinha'],
+            response: () => KNOWLEDGE_BASE.cantonFair.fase2
+        },
+        // Fase 3
+        {
+            patterns: ['fase 3', 'fase3', 'moda', 'roupa', 'brinquedo', 'têxtil', 'textil', 'tecido', 'infantil'],
+            response: () => KNOWLEDGE_BASE.cantonFair.fase3
+        },
+        // Local
+        {
+            patterns: ['onde', 'local', 'localização', 'localizacao', 'cidade', 'guangzhou', 'cantão', 'cantao', 'endereço', 'endereco'],
             response: () => KNOWLEDGE_BASE.cantonFair.local
         },
+        // Tamanho
         {
-            patterns: ['tamanho', 'grande', 'quantos', 'estandes', 'expositores'],
+            patterns: ['tamanho', 'grande', 'quantos estandes', 'quantos expositores', 'números', 'numeros'],
             response: () => KNOWLEDGE_BASE.cantonFair.tamanho
         },
+        // Starvision
         {
-            patterns: ['starvision', 'empresa', 'vocês', 'vcs', 'quem são'],
+            patterns: ['starvision', 'empresa', 'vocês', 'vcs', 'quem são', 'quem sao'],
             response: () => KNOWLEDGE_BASE.starvision.sobre
         },
+        // Missão
         {
-            patterns: ['missão', 'missao', 'código china', 'codigo china', 'pacote viagem', 'viagem china'],
+            patterns: ['missão', 'missao', 'código china', 'codigo china', 'viagem', 'pacote viagem'],
             response: () => KNOWLEDGE_BASE.starvision.missao
         },
+        // O que inclui
         {
-            patterns: ['inclui', 'incluso', 'pacote', 'o que tem', 'benefícios', 'beneficios'],
+            patterns: ['inclui', 'incluso', 'o que tem', 'pacote', 'o que vem'],
             response: () => KNOWLEDGE_BASE.starvision.pacote
         },
+        // Diferenciais
         {
-            patterns: ['preço', 'preco', 'valor', 'quanto', 'custa', 'investimento', 'custo'],
-            response: () => KNOWLEDGE_BASE.starvision.preco
+            patterns: ['diferencial', 'diferenciais', 'especial', 'diferente', 'por que starvision', 'porque starvision'],
+            response: () => KNOWLEDGE_BASE.starvision.diferenciais
         },
+        // VALORES/PREÇO - Direcionar para reunião
         {
-            patterns: ['quem lidera', 'líder', 'lider', 'organizador', 'rodrigo', 'antonio', 'fogaça', 'equipe'],
-            response: () => KNOWLEDGE_BASE.starvision.equipe
-        },
-        {
-            patterns: ['serviço', 'servico', 'suporte', 'apoio', 'ajuda feira', 'durante a feira'],
-            response: () => KNOWLEDGE_BASE.servicos.feira
-        },
-        {
-            patterns: ['importar', 'importação', 'importacao', 'exportar', 'exportação', 'exportacao', 'comprar china', 'trazer produtos'],
-            response: () => KNOWLEDGE_BASE.servicos.importacao
-        },
-        {
-            patterns: ['sim', 'quero', 'tenho interesse', 'interessado', 'vamos', 'bora', 'pode ser', 'claro'],
-            response: () => "Que ótimo! 🎉 Fico feliz com seu interesse!\n\nPara te dar um atendimento mais personalizado, vou te conectar com um dos nossos especialistas pelo WhatsApp. Eles podem tirar todas as suas dúvidas e montar uma proposta sob medida para você!",
+            patterns: ['preço', 'preco', 'valor', 'quanto', 'custa', 'investimento', 'custo', 'quanto custa', 'qual o valor', 'qual valor', 'parcela', 'pagamento', 'pagar'],
+            response: () => "Ótima pergunta! 💬\n\nOs valores da Missão Código China são personalizados conforme o tipo de pacote, acomodação e necessidades de cada empresário.\n\nPara te passar informações precisas, nosso time comercial precisa entender melhor seu perfil e objetivos. Que tal conversar com um especialista? Ele pode montar uma proposta sob medida pra você!",
             triggerWhatsApp: true
         },
+        // Equipe/Líderes
         {
-            patterns: ['obrigado', 'obrigada', 'valeu', 'vlw', 'thanks'],
-            response: () => "Por nada! 😊 Foi um prazer ajudar!\n\nSe quiser continuar conversando com um especialista humano, posso te conectar pelo WhatsApp. Deseja?"
+            patterns: ['quem lidera', 'líder', 'lider', 'organizador', 'rodrigo', 'antonio', 'fogaça', 'fogaca', 'equipe'],
+            response: () => KNOWLEDGE_BASE.starvision.equipe
         },
+        // Serviços na feira
         {
-            patterns: ['tchau', 'adeus', 'até', 'ate', 'flw', 'falou'],
-            response: () => "Até mais! 👋 Foi um prazer conversar com você.\n\nSe precisar de qualquer coisa, é só me chamar! Bons negócios! 🚀"
+            patterns: ['serviço', 'servico', 'suporte', 'apoio', 'durante a feira', 'ajuda na feira', 'acompanhamento'],
+            response: () => KNOWLEDGE_BASE.servicos.feira
+        },
+        // Preparação
+        {
+            patterns: ['preparação', 'preparacao', 'antes da viagem', 'workshop', 'preparo', 'treinamento'],
+            response: () => KNOWLEDGE_BASE.servicos.preparacao
+        },
+        // Importação/Exportação
+        {
+            patterns: ['importar', 'importação', 'importacao', 'exportar', 'exportação', 'exportacao', 'comprar china', 'trazer produtos', 'fornecedor'],
+            response: () => KNOWLEDGE_BASE.servicos.importacao
+        },
+        // Cultura
+        {
+            patterns: ['cultura', 'cultural', 'costumes', 'guanxi', 'etiqueta', 'comportamento'],
+            response: () => KNOWLEDGE_BASE.china.cultura
+        },
+        // Idioma
+        {
+            patterns: ['idioma', 'língua', 'lingua', 'mandarim', 'chinês', 'chines', 'falar', 'comunicação', 'comunicacao', 'tradutor'],
+            response: () => KNOWLEDGE_BASE.china.idioma
+        },
+        // Segurança
+        {
+            patterns: ['seguro', 'segurança', 'seguranca', 'perigoso', 'risco', 'medo'],
+            response: () => KNOWLEDGE_BASE.china.seguranca
+        },
+        // Interesse positivo
+        {
+            patterns: ['quero', 'tenho interesse', 'interessado', 'me inscrever', 'participar', 'quero ir', 'vou ir', 'reservar'],
+            response: () => "Que maravilha! 🎉 Fico muito feliz com seu interesse!\n\nPara dar o próximo passo, nosso time de especialistas precisa conhecer melhor seu perfil empresarial e objetivos. Eles vão te ajudar com todas as informações e orientações!\n\nVamos te conectar pelo WhatsApp?",
+            triggerWhatsApp: true
+        },
+        // Confirmações
+        {
+            patterns: ['sim', 'vamos', 'bora', 'pode ser', 'claro', 'com certeza', 'positivo', 'ok'],
+            response: () => "Perfeito! 👍\n\nVou te direcionar para um dos nossos especialistas. Eles estão prontos para te ajudar com tudo que você precisa!",
+            triggerWhatsApp: true
+        },
+        // Agradecimentos
+        {
+            patterns: ['obrigado', 'obrigada', 'valeu', 'vlw', 'thanks', 'agradeço', 'agradeco'],
+            response: () => "Imagina! 😊 Foi um prazer conversar com você!\n\nSe quiser informações mais detalhadas ou uma proposta personalizada, nossos especialistas estão à disposição pelo WhatsApp!\n\nPosso te conectar?"
+        },
+        // Despedidas
+        {
+            patterns: ['tchau', 'adeus', 'até', 'ate', 'flw', 'falou', 'bye'],
+            response: () => "Até mais! 👋 Foi ótimo conversar com você!\n\nQuando quiser saber mais sobre a Canton Fair ou a Missão Código China, é só voltar aqui. Bons negócios! 🚀"
+        },
+        // Dúvidas
+        {
+            patterns: ['dúvida', 'duvida', 'pergunta', 'saber mais', 'me conta', 'explica', 'como funciona'],
+            response: () => "Claro, estou aqui pra isso! 😊\n\nPosso te contar sobre:\n\n🌏 A Canton Fair (maior feira do mundo!)\n✈️ A Missão Código China\n📅 Datas e fases da feira\n👨‍💼 A equipe Starvision\n📦 Serviços de importação\n\nQual tema te interessa mais?"
+        },
+        // Negócios/Empreendedorismo
+        {
+            patterns: ['negócio', 'negocio', 'empreendedor', 'empresa', 'empresário', 'empresario', 'loja', 'comércio', 'comercio'],
+            response: () => "Ah, você é empreendedor! 💼 Que incrível!\n\nA Canton Fair é O lugar para quem quer alavancar seu negócio. Lá você encontra fornecedores, negocia direto, vê tendências... É transformador!\n\nQual é o seu ramo? Posso te indicar qual fase da feira é mais interessante pra você!"
+        },
+        // Primeira vez
+        {
+            patterns: ['primeira vez', 'nunca fui', 'iniciante', 'começo', 'comeco', 'novo nisso'],
+            response: () => "Primeira vez pensando em ir à China? Que passo importante! 🌟\n\nA Missão Código China é perfeita pra você! Temos toda uma preparação antes da viagem: workshops, orientações, aulas de mandarim básico...\n\nE lá você nunca fica sozinho - consultores e tradutores te acompanham em toda a feira. Zero estresse!"
         }
     ];
 
-    // Respostas padrão quando não entende
+    // Respostas padrão mais humanizadas
     const DEFAULT_RESPONSES = [
-        "Hmm, não tenho certeza se entendi. 🤔\n\nPosso te ajudar com:\n• Informações sobre a Canton Fair\n• Detalhes da Missão Código China\n• Datas e fases da feira\n• O que está incluso no pacote\n\nSobre o que gostaria de saber?",
-        "Desculpe, não consegui entender sua pergunta. 😅\n\nMinha especialidade é falar sobre a Canton Fair e a Missão Código China da Starvision. Quer saber mais sobre algum desses temas?",
-        "Ops! Essa é uma pergunta que foge um pouco da minha área. 🙈\n\nMas posso te conectar com um especialista humano pelo WhatsApp que pode te ajudar melhor! Quer que eu faça isso?"
+        "Hmm, deixa eu pensar... 🤔\n\nNão tenho certeza se entendi direitinho. Minha especialidade é falar sobre a Canton Fair e a Missão Código China!\n\nQuer saber sobre datas, o que está incluso, ou como funciona a feira?",
+        "Essa é uma boa pergunta! Mas confesso que foge um pouquinho do meu conhecimento. 😅\n\nSobre a Canton Fair e nossa Missão, posso te ajudar com tudo! O que você gostaria de saber?",
+        "Olha, sobre isso específico talvez um dos nossos especialistas possa te ajudar melhor! 💬\n\nMas se quiser saber sobre a Canton Fair, datas da próxima edição, ou o que inclui nosso pacote, estou por aqui!",
+        "Hum, não tenho essa informação na ponta da língua... 🙈\n\nMas me conta: qual seu interesse principal? Canton Fair? Importação? Posso te direcionar melhor!"
     ];
 
     // Estado do chat
@@ -125,18 +234,23 @@
         step: 0,
         interactionCount: 0,
         hasOfferedWhatsApp: false,
-        conversationHistory: []
+        conversationHistory: [],
+        lastTopic: null
     };
 
     // Elementos DOM
     let elements = {};
 
-    // Obter saudação baseada no horário
+    // Funções auxiliares
     function getGreeting() {
         const hour = new Date().getHours();
         if (hour >= 5 && hour < 12) return 'Bom dia';
         if (hour >= 12 && hour < 18) return 'Boa tarde';
         return 'Boa noite';
+    }
+
+    function getRandomItem(array) {
+        return array[Math.floor(Math.random() * array.length)];
     }
 
     // Inicialização
@@ -177,12 +291,10 @@
         });
     }
 
-    // Toggle do chat
     function toggleChat() {
         chatState.isOpen ? closeChat() : openChat();
     }
 
-    // Abrir chat
     function openChat() {
         chatState.isOpen = true;
         elements.chatWindow.classList.add('open');
@@ -194,7 +306,7 @@
                 setTimeout(() => {
                     hideTypingIndicator();
                     const greeting = getGreeting();
-                    const welcomeMessage = `${greeting}! 😊 Bem-vindo à Starvision!\n\nEu sou a Estela, sua assistente virtual. Estou aqui para te ajudar com tudo sobre a Missão Código China e a Canton Fair!\n\nAntes de começarmos, qual é o seu nome?`;
+                    const welcomeMessage = `${greeting}! 😊 Bem-vindo à Starvision!\n\nEu sou a Estela, sua assistente virtual. Estou aqui para te contar tudo sobre a Canton Fair e a Missão Código China!\n\nPrimeiro, como posso te chamar?`;
                     addBotMessage(welcomeMessage);
                     chatState.step = 1;
                 }, CONFIG.typingDelay);
@@ -204,13 +316,11 @@
         setTimeout(() => elements.chatInput.focus(), 300);
     }
 
-    // Fechar chat
     function closeChat() {
         chatState.isOpen = false;
         elements.chatWindow.classList.remove('open');
     }
 
-    // Lidar com envio de mensagem
     function handleSubmit(e) {
         e.preventDefault();
         const message = elements.chatInput.value.trim();
@@ -221,7 +331,7 @@
         processUserResponse(message);
     }
 
-    // Detectar intenção da mensagem
+    // Detectar intenção
     function detectIntention(message) {
         const normalizedMessage = message.toLowerCase()
             .normalize('NFD')
@@ -244,28 +354,32 @@
 
         switch (chatState.step) {
             case 1:
-                // Usuário enviou o nome
-                chatState.userName = message.split(' ')[0]; // Pega primeiro nome
+                // Captura nome
+                let userName = message.split(' ')[0];
+                userName = userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase();
+                chatState.userName = userName;
 
                 setTimeout(() => {
                     showTypingIndicator();
                     setTimeout(() => {
                         hideTypingIndicator();
-                        const response = `Prazer em conhecer você, ${chatState.userName}! 🤝\n\nEstou aqui para te ajudar com informações sobre:\n\n🇨🇳 A Canton Fair - maior feira do mundo\n✈️ A Missão Código China da Starvision\n📦 Serviços de importação e exportação\n\nSobre o que gostaria de saber?`;
-                        addBotMessage(response);
+                        const responses = [
+                            `Prazer te conhecer, ${userName}! 🤝\n\nMe conta: você já conhece a Canton Fair ou é a primeira vez que ouve falar dela?`,
+                            `Que nome bonito, ${userName}! 😊\n\nE aí, como posso te ajudar hoje? Quer saber sobre a Canton Fair, a Missão Código China, ou tem alguma dúvida específica?`,
+                            `Olá, ${userName}! É um prazer! ✨\n\nEstou aqui pra te ajudar com tudo sobre a maior feira de negócios do mundo! O que te traz aqui hoje?`
+                        ];
+                        addBotMessage(getRandomItem(responses));
                         chatState.step = 2;
                     }, CONFIG.typingDelay);
                 }, CONFIG.messageDelay);
                 break;
 
             case 2:
-                // Conversa livre - processar intenção
                 handleFreeConversation(message);
                 break;
         }
     }
 
-    // Lidar com conversa livre
     function handleFreeConversation(message) {
         const intention = detectIntention(message);
 
@@ -279,37 +393,37 @@
 
                 if (intention) {
                     response = intention.response();
-
                     if (intention.triggerWhatsApp) {
                         shouldOfferWhatsApp = true;
                     }
                 } else {
-                    // Resposta padrão
-                    const randomIndex = Math.floor(Math.random() * DEFAULT_RESPONSES.length);
-                    response = DEFAULT_RESPONSES[randomIndex];
+                    response = getRandomItem(DEFAULT_RESPONSES);
                 }
 
-                // Personaliza resposta com o nome se conhecido
-                if (chatState.userName && Math.random() > 0.7) {
-                    response = `${chatState.userName}, ${response.charAt(0).toLowerCase()}${response.slice(1)}`;
+                // Ocasionalmente adiciona o nome do usuário
+                if (chatState.userName && Math.random() > 0.8 && !response.includes(chatState.userName)) {
+                    const openers = [`${chatState.userName}, `, `Olha ${chatState.userName}, `, `Sabe ${chatState.userName}, `];
+                    response = getRandomItem(openers) + response.charAt(0).toLowerCase() + response.slice(1);
                 }
 
                 addBotMessage(response);
                 chatState.conversationHistory.push({ role: 'bot', message: response });
 
-                // Verificar se deve oferecer WhatsApp
-                if (shouldOfferWhatsApp ||
-                    (chatState.interactionCount >= CONFIG.maxInteractionsBeforeWhatsApp && !chatState.hasOfferedWhatsApp)) {
+                // Oferecer WhatsApp após várias interações ou se trigger
+                if (shouldOfferWhatsApp) {
+                    setTimeout(() => {
+                        addWhatsAppButton();
+                    }, 1000);
+                } else if (chatState.interactionCount >= CONFIG.maxInteractionsBeforeWhatsApp && !chatState.hasOfferedWhatsApp) {
                     setTimeout(() => {
                         offerWhatsAppConnection();
-                    }, 1500);
+                    }, 2000);
                 }
 
             }, CONFIG.typingDelay);
         }, CONFIG.messageDelay);
     }
 
-    // Oferecer conexão via WhatsApp
     function offerWhatsAppConnection() {
         chatState.hasOfferedWhatsApp = true;
 
@@ -317,11 +431,12 @@
         setTimeout(() => {
             hideTypingIndicator();
 
-            const message = chatState.userName
-                ? `${chatState.userName}, que tal continuar essa conversa com um dos nossos especialistas? 💬\n\nEles podem te dar informações mais detalhadas e montar uma proposta personalizada para você!`
-                : `Que tal continuar essa conversa com um dos nossos especialistas? 💬\n\nEles podem te dar informações mais detalhadas e montar uma proposta personalizada!`;
+            const messages = [
+                `${chatState.userName}, está gostando da nossa conversa? 😊\n\nSe quiser informações mais detalhadas ou uma proposta personalizada, posso te conectar com um dos nossos especialistas pelo WhatsApp!`,
+                `Ei ${chatState.userName}! Que tal falar com alguém da nossa equipe comercial? 💬\n\nEles podem te dar informações mais específicas e tirar todas as suas dúvidas!`
+            ];
 
-            addBotMessage(message);
+            addBotMessage(getRandomItem(messages));
 
             setTimeout(() => {
                 addWhatsAppButton();
@@ -329,7 +444,6 @@
         }, CONFIG.typingDelay);
     }
 
-    // Adicionar mensagem do bot
     function addBotMessage(text) {
         const messageEl = document.createElement('div');
         messageEl.className = 'chat-message chat-message--bot';
@@ -341,7 +455,6 @@
         scrollToBottom();
     }
 
-    // Adicionar mensagem do usuário
     function addUserMessage(text) {
         const messageEl = document.createElement('div');
         messageEl.className = 'chat-message chat-message--user';
@@ -353,7 +466,6 @@
         scrollToBottom();
     }
 
-    // Mostrar indicador de digitação
     function showTypingIndicator() {
         const typingEl = document.createElement('div');
         typingEl.className = 'typing-indicator';
@@ -363,13 +475,11 @@
         scrollToBottom();
     }
 
-    // Esconder indicador de digitação
     function hideTypingIndicator() {
         const typingEl = document.getElementById('typingIndicator');
         if (typingEl) typingEl.remove();
     }
 
-    // Adicionar botão do WhatsApp
     function addWhatsAppButton() {
         const buttonEl = document.createElement('a');
         buttonEl.className = 'chat-whatsapp-redirect';
@@ -382,37 +492,33 @@
         scrollToBottom();
     }
 
-    // Gerar link do WhatsApp
     function getWhatsAppLink() {
         const name = chatState.userName || 'Visitante';
-        const context = chatState.conversationHistory
+        const topics = chatState.conversationHistory
             .filter(h => h.role === 'user')
-            .slice(-2)
+            .slice(-3)
             .map(h => h.message)
             .join(' | ');
 
         let message = `Olá! Me chamo ${name}.\n\nConversei com a Estela e gostaria de mais informações sobre a Missão Código China.`;
 
-        if (context) {
-            message += `\n\n[Contexto: ${context.substring(0, 100)}]`;
+        if (topics) {
+            message += `\n\n[Assuntos conversados: ${topics.substring(0, 100)}]`;
         }
 
         return `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
     }
 
-    // Formatar mensagem
     function formatMessage(text) {
         return escapeHtml(text).replace(/\n/g, '<br>');
     }
 
-    // Escapar HTML
     function escapeHtml(text) {
         const div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
     }
 
-    // Obter hora atual
     function getCurrentTime() {
         return new Date().toLocaleTimeString('pt-BR', {
             hour: '2-digit',
@@ -420,12 +526,10 @@
         });
     }
 
-    // Scroll para o final
     function scrollToBottom() {
         elements.chatMessages.scrollTop = elements.chatMessages.scrollHeight;
     }
 
-    // Iniciar
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
