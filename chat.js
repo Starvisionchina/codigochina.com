@@ -476,7 +476,7 @@
                 setTimeout(() => {
                     hideTypingIndicator();
                     const greeting = getGreeting();
-                    const welcomeMessage = `${greeting}! 😊 Bem-vindo à Starvision!\n\nEu sou a Estela, sua assistente virtual. Estou aqui pra te ajudar com tudo sobre a Canton Fair e a Missão Código China!\n\nPrimeiro, como posso te chamar?`;
+                    const welcomeMessage = `${greeting} empreendedor, tudo bem? 😊\n\nEu sou a Estela e vou lhe auxiliar.\n\nQual o seu nome?`;
                     addBotMessage(welcomeMessage);
                     chatState.step = 1;
                 }, CONFIG.typingDelay);
@@ -541,13 +541,8 @@
                     showTypingIndicator();
                     setTimeout(() => {
                         hideTypingIndicator();
-                        const responses = [
-                            `Prazer em te conhecer, ${userName}! 🤝\n\nE aí, como posso te ajudar hoje? Quer saber sobre a Canton Fair, a Missão Código China, ou já tem alguma dúvida específica?`,
-                            `Que nome bonito, ${userName}! 😊\n\nMe conta: você já conhece a Canton Fair ou é a primeira vez que ouve falar dela?`,
-                            `Olá, ${userName}! É um prazer! ✨\n\nEstou aqui pra te ajudar com tudo sobre a maior feira de negócios do mundo! O que te traz aqui hoje?`,
-                            `Legal te conhecer, ${userName}! 🙌\n\nSobre o que gostaria de conversar? Canton Fair, a Missão, datas, o que inclui... Só me falar!`
-                        ];
-                        addBotMessage(getRandomItem(responses));
+                        const response = `Muito prazer, ${userName}! 🤝\n\nComo posso estar lhe ajudando?`;
+                        addBotMessage(response);
                         chatState.step = 2;
                     }, CONFIG.typingDelay);
                 }, CONFIG.messageDelay);
