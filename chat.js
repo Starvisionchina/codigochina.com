@@ -106,7 +106,7 @@
                 setTimeout(() => {
                     hideTypingIndicator();
                     const greeting = getGreeting();
-                    const welcomeMessage = `${greeting}, empreendedor, tudo bem?\n\nEu sou a Estrela e vou lhe auxiliar. Qual o seu nome?`;
+                    const welcomeMessage = `${greeting}, empreendedor, tudo bem?\n\nEu sou a Stela e vou lhe auxiliar. Qual o seu nome?`;
                     addBotMessage(welcomeMessage);
                     chatState.step = 1;
                 }, CONFIG.typingDelay);
@@ -220,7 +220,7 @@
             setTimeout(() => {
                 hideTypingIndicator();
 
-                const finalMessage = `Excelente escolha! 🎉\n\nPara darmos continuidade, vou te conectar diretamente com nosso especialista no WhatsApp.\n\nClique no botão abaixo para continuar:`;
+                const finalMessage = `Perfeito! Clique no botão abaixo para continuar o seu atendimento:`;
 
                 addBotMessage(finalMessage);
 
