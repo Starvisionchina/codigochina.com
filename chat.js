@@ -64,6 +64,16 @@
             },
             isGreeting: true
         },
+        // Contato - Telefone/WhatsApp
+        {
+            patterns: ['telefone', 'fone', 'ligar', 'whatsapp', 'whats', 'zap', 'número', 'numero', 'celular', 'contato telefone', 'qual o whatsapp', 'qual whatsapp', 'me passa o whatsapp', 'passa o whatsapp', 'qual o telefone', 'qual telefone'],
+            response: () => "Claro! 📞 Nosso telefone e WhatsApp é:\n\n**(51) 3103-1030**\n\nPode ligar ou mandar mensagem que nossa equipe vai te atender! 😊"
+        },
+        // Contato - Email
+        {
+            patterns: ['email', 'e-mail', 'correio', 'mail', 'qual o email', 'qual email', 'me passa o email', 'passa o email'],
+            response: () => "Claro! 📧 Nosso email é:\n\n**contato@e-starvision.com**\n\nPode enviar sua mensagem que respondemos o mais rápido possível! 😊"
+        },
         // Canton Fair - Geral
         {
             patterns: ['canton fair', 'cantonfair', 'maior feira', 'o que é a feira', 'sobre a feira', 'me fala da feira', 'conta sobre a feira'],
