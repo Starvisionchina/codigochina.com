@@ -24,9 +24,8 @@
 
     // Opções de interesse
     const interestOptions = [
-        { id: 'produtos', label: '🛒 Novos Produtos', value: 'buscar novos produtos' },
-        { id: 'tecnologias', label: '💡 Conhecer Tecnologias', value: 'conhecer tecnologias' },
-        { id: 'networking', label: '🤝 Fazer Networking', value: 'fazer networking' }
+        { id: 'missao', label: '🇨🇳 Saber mais sobre a Missão Código China', value: 'Saber mais sobre a Missão Código China' },
+        { id: 'suporte', label: '📦 Quero suporte de importação ou exportação', value: 'Quero suporte de importação ou exportação' }
     ];
 
     // Elementos DOM
@@ -107,7 +106,7 @@
                 setTimeout(() => {
                     hideTypingIndicator();
                     const greeting = getGreeting();
-                    const welcomeMessage = `Oie! ${greeting}! ✨\n\nTudo bem? Eu sou a Estrela, sua guia virtual aqui na Starvision.\n\nCom quem eu tenho o prazer de conversar?`;
+                    const welcomeMessage = `${greeting}, empreendedor, tudo bem?\n\nEu sou a Estrela e vou lhe auxiliar. Qual o seu nome?`;
                     addBotMessage(welcomeMessage);
                     chatState.step = 1;
                 }, CONFIG.typingDelay);
@@ -154,7 +153,7 @@
                     setTimeout(() => {
                         hideTypingIndicator();
 
-                        const greeting = `Muito prazer, ${message}! 😊\n\nSeja bem-vindo(a) à Starvision!\n\nVi aqui que você se interessou pela nossa Missão Código China 2026. Essa imersão vai ser transformadora!\n\nPara eu te conectar com o consultor ideal para o seu perfil, me conta uma coisa: o seu foco principal nessa viagem seria buscar:`;
+                        const greeting = `Muito prazer, ${message}!\n\nEscolha uma das opções abaixo e vamos te conectar com um de nossos especialistas.`;
 
                         addBotMessage(greeting);
 
@@ -221,7 +220,7 @@
             setTimeout(() => {
                 hideTypingIndicator();
 
-                const finalMessage = `Excelente escolha! 🎉\n\nPara darmos continuidade, vou te conectar diretamente com nosso especialista no WhatsApp.\n\nEle vai te passar todas as informações sobre a missão e como você pode ${option.value}.\n\nClique no botão abaixo para continuar:`;
+                const finalMessage = `Excelente escolha! 🎉\n\nPara darmos continuidade, vou te conectar diretamente com nosso especialista no WhatsApp.\n\nClique no botão abaixo para continuar:`;
 
                 addBotMessage(finalMessage);
 
@@ -295,7 +294,8 @@
         const name = chatState.userName || 'Visitante';
 
         // Mensagem simplificada e humanizada
-        let message = `Olá! Me chamo ${name} 👋\n\nTenho interesse na Missão Código China 2026 e gostaria de saber mais detalhes.`;
+        // Mensagem simplificada e formatada para automação
+        let message = `Olá! Me chamo ${name}. Tenho interesse em: ${chatState.userInterest}.`;
 
         return `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
     }
