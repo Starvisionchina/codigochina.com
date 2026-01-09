@@ -1,6 +1,6 @@
 /**
  * WhatsApp Chat Widget - Starvision
- * Assistente Virtual "Estrela" - Conversa Humanizada
+ * Assistente Virtual "Stela" - Conversa Humanizada
  */
 
 (function () {
@@ -9,7 +9,7 @@
     // Configurações
     const CONFIG = {
         whatsappNumber: '555131031030',
-        botName: 'Estrela',
+        botName: 'Stela',
         typingDelay: 1200,
         messageDelay: 600
     };
