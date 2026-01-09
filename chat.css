@@ -33,7 +33,7 @@
 /* Chat Widget Container */
 .whatsapp-chat-widget {
     position: fixed;
-    bottom: 30px;
+    bottom: 100px;
     right: 30px;
     z-index: 99999;
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -479,7 +479,7 @@
 /* Responsive - Mobile Fullscreen */
 @media (max-width: 768px) {
     .whatsapp-chat-widget {
-        bottom: 20px;
+        bottom: 90px;
         right: 20px;
     }
 
