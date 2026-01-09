@@ -89,7 +89,17 @@
         china: {
             cultura: "A cultura de negócios chinesa é fascinante! 🇨🇳\n\nO conceito de **Guanxi** (relacionamento pessoal) é muito valorizado. Por isso fazemos:\n• Jantares de networking\n• Imersões culturais\n• Visitas guiadas às cidades\n\nEntender a cultura faz toda diferença nas negociações!",
             seguranca: "A China é muito segura para turistas de negócios! 🔒\n\nGuangzhou é uma cidade moderna, organizada e tranquila. Além disso, você estará sempre:\n• Acompanhado pela equipe Starvision\n• Com guias locais experientes\n• Em hotéis de categoria superior\n\nPode ir tranquilo!",
-            cidades: "A Missão passa por 3 cidades incríveis! 🌆\n\n**Hong Kong:**\nMetrópole financeira, mistura de culturas.\n\n**Shenzhen:**\nA \"Silicon Valley\" da China, centro tecnológico.\n\n**Guangzhou:**\nOnde fica a Canton Fair, cidade histórica e comercial.\n\nViagem de trem bala entre elas - uma experiência à parte!"
+            cidades: "A Missão passa por 3 cidades incríveis! 🌆\n\n**Hong Kong:**\nMetrópole financeira, mistura de culturas.\n\n**Shenzhen:**\nA \"Silicon Valley\" da China, centro tecnológico.\n\n**Guangzhou:**\nOnde fica a Canton Fair, cidade histórica e comercial.\n\nViagem de trem bala entre elas - uma experiência à parte!",
+            clima: "Ótima pergunta sobre o clima! 🌤️\n\nEm Abril, Guangzhou tem clima subtropical úmido:\n\n• **Temperatura**: Entre 20°C e 28°C (bem agradável!)\n• **Umidade**: Alta, típico de primavera\n• **Chuvas**: Possíveis pancadas de chuva, mas nada que atrapalhe\n\n**Dica**: Leve roupas leves, um guarda-chuva compacto e casaco leve pro ar condicionado da feira!\n\nÉ uma época muito boa pra visitar!",
+            curiosidades: "A China é cheia de curiosidades! 🐉\n\n• **Trem bala**: Viaja a até 350km/h - você vai de Shenzhen a Guangzhou rapidinho!\n• **WeChat**: O app que faz TUDO - pagamentos, mensagens, redes sociais\n• **Comida**: Cada região tem culinária única - Guangzhou é famosa pelo Dim Sum!\n• **Escala**: Tudo é GIGANTE - prédios, feiras, shoppings\n• **Tecnologia**: Pagamento por QR Code em todo lugar\n• **5G**: Internet ultrarrápida em todas as cidades\n\nÉ uma experiência única de imersão!",
+            gastronomia: "A gastronomia chinesa é incrível! 🍜\n\nGuangzhou é considerada a capital gastronômica da China!\n\n• **Dim Sum**: Pequenas porções deliciosas\n• **Pato Laqueado**: Um clássico imperdível\n• **Frutos do Mar**: Fresquíssimos!\n• **Chá**: Cultura milenar\n\nDurante a missão temos jantares especiais pra você experimentar o melhor da culinária local!"
+        },
+
+        // TECNOLOGIAS E ROBÔS
+        tecnologia: {
+            robos: "A Starvision trabalha com tecnologias incríveis! 🤖\n\nNa Canton Fair você encontra:\n• Robôs de serviço e atendimento\n• Automação industrial\n• Drones comerciais\n• Inteligência Artificial aplicada\n• Veículos elétricos e autônomos\n• Smart home e IoT\n\nShenzhen é conhecida como a \"Silicon Valley\" da China - é impressionante o nível de inovação!",
+            inovacao: "A China é líder mundial em inovação tecnológica! 💡\n\n• **5G**: Cobertura massiva\n• **Veículos elétricos**: BYD, NIO, XPeng dominando\n• **IA**: Avanços impressionantes\n• **E-commerce**: Alibaba, JD.com\n• **Fintechs**: Pagamento digital em todo lugar\n\nNa Fase 1 da Canton Fair você vê tudo isso de perto!",
+            starvision: "A Starvision está sempre conectada com as últimas tecnologias! 🚀\n\nTrabalhamos com:\n• Automação industrial\n• Robôs de serviço\n• Energia solar e renovável\n• Equipamentos de última geração\n• Produtos de alta tecnologia\n\nNossos consultores conhecem profundamente esses mercados e podem te orientar nas melhores oportunidades!"
         },
 
         // CONTATOS
@@ -235,7 +245,8 @@
         // PACOTE - Geral
         {
             patterns: ['pacote', 'o que inclui', 'inclui o que', 'incluso', 'o que tem', 'o que vem', 'benefícios'],
-            response: () => KNOWLEDGE_BASE.pacote.completo
+            response: () => KNOWLEDGE_BASE.pacote.completo,
+            triggerWhatsApp: true
         },
 
         // PACOTE - Preparação
@@ -253,7 +264,8 @@
         // SERVIÇOS - Feira
         {
             patterns: ['serviço', 'servico', 'suporte', 'apoio', 'durante a feira', 'ajuda na feira', 'acompanhamento'],
-            response: () => KNOWLEDGE_BASE.servicos.feira
+            response: () => KNOWLEDGE_BASE.servicos.feira,
+            triggerWhatsApp: true
         },
 
         // SERVIÇOS - Tradutor
@@ -265,43 +277,92 @@
         // SERVIÇOS - Análise de Fornecedores
         {
             patterns: ['fornecedor', 'fornecedores', 'análise', 'analise', 'verificar', 'confiável', 'confiavel', 'seguro negociar'],
-            response: () => KNOWLEDGE_BASE.servicos.analise
+            response: () => KNOWLEDGE_BASE.servicos.analise,
+            triggerWhatsApp: true
         },
 
         // OBJETIVOS
         {
             patterns: ['objetivo', 'objetivos', 'pra que serve', 'qual o propósito', 'qual o proposito', 'finalidade'],
-            response: () => KNOWLEDGE_BASE.objetivos.geral
+            response: () => KNOWLEDGE_BASE.objetivos.geral,
+            triggerWhatsApp: true
         },
 
         // NETWORKING
         {
             patterns: ['networking', 'contatos', 'conexões', 'conexoes', 'relacionamento', 'conhecer pessoas'],
-            response: () => KNOWLEDGE_BASE.objetivos.networking
+            response: () => KNOWLEDGE_BASE.objetivos.networking,
+            triggerWhatsApp: true
         },
 
         // CRESCIMENTO
         {
             patterns: ['crescer', 'crescimento', 'escalar', 'expandir', 'lucro', 'margem', 'marca própria'],
-            response: () => KNOWLEDGE_BASE.objetivos.crescimento
+            response: () => KNOWLEDGE_BASE.objetivos.crescimento,
+            triggerWhatsApp: true
         },
 
         // CULTURA CHINESA
         {
             patterns: ['cultura', 'cultural', 'costumes', 'guanxi', 'etiqueta', 'comportamento'],
-            response: () => KNOWLEDGE_BASE.china.cultura
+            response: () => KNOWLEDGE_BASE.china.cultura,
+            triggerWhatsApp: true
         },
 
         // SEGURANÇA
         {
             patterns: ['seguro', 'segurança', 'seguranca', 'perigoso', 'risco', 'medo', 'violência'],
-            response: () => KNOWLEDGE_BASE.china.seguranca
+            response: () => KNOWLEDGE_BASE.china.seguranca,
+            triggerWhatsApp: true
         },
 
         // CIDADES
         {
             patterns: ['hong kong', 'shenzhen', 'cidades', 'roteiro', 'onde passa', 'visita'],
-            response: () => KNOWLEDGE_BASE.china.cidades
+            response: () => KNOWLEDGE_BASE.china.cidades,
+            triggerWhatsApp: true
+        },
+
+        // CLIMA
+        {
+            patterns: ['clima', 'tempo', 'temperatura', 'frio', 'calor', 'chuva', 'quente', 'chove', 'como é o clima', 'que roupa', 'roupa levar'],
+            response: () => KNOWLEDGE_BASE.china.clima,
+            triggerWhatsApp: true
+        },
+
+        // CURIOSIDADES
+        {
+            patterns: ['curiosidade', 'curiosidades', 'curioso', 'diferente', 'estranho', 'interessante', 'como é lá', 'como e la'],
+            response: () => KNOWLEDGE_BASE.china.curiosidades,
+            triggerWhatsApp: true
+        },
+
+        // GASTRONOMIA
+        {
+            patterns: ['comida', 'comidas', 'gastronomia', 'culinária', 'culinaria', 'restaurante', 'comer', 'dim sum', 'prato', 'alimentação', 'alimentacao'],
+            response: () => KNOWLEDGE_BASE.china.gastronomia,
+            triggerWhatsApp: true
+        },
+
+        // ROBÔS E TECNOLOGIA
+        {
+            patterns: ['robô', 'robo', 'robos', 'robôs', 'automação', 'automacao', 'drone', 'drones', 'IA', 'inteligência artificial', 'inteligencia artificial'],
+            response: () => KNOWLEDGE_BASE.tecnologia.robos,
+            triggerWhatsApp: true
+        },
+
+        // INOVAÇÃO
+        {
+            patterns: ['inovação', 'inovacao', 'tecnologia', 'tech', 'high tech', '5g', 'elétrico', 'eletrico', 'carro elétrico', 'byd', 'veículo elétrico'],
+            response: () => KNOWLEDGE_BASE.tecnologia.inovacao,
+            triggerWhatsApp: true
+        },
+
+        // STARVISION TECNOLOGIA
+        {
+            patterns: ['o que vocês trabalham', 'produtos starvision', 'o que a starvision faz', 'areas de atuação', 'segmentos', 'energia solar', 'equipamentos'],
+            response: () => KNOWLEDGE_BASE.tecnologia.starvision,
+            triggerWhatsApp: true
         },
 
         // IMPORTAÇÃO/EXPORTAÇÃO
