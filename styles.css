@@ -1428,7 +1428,7 @@ img {
     align-items: center;
     justify-content: center;
     /* Imagem de fundo real */
-    background-image: url('assets/images/team/team-background.png');
+    background-image: url('assets/images/team/team-background.webp');
     background-size: cover;
     background-position: center;
     overflow: hidden;
