@@ -16,6 +16,58 @@
         maxInteractionsBeforeWhatsApp: 6
     };
 
+    // Configuração da API Gemini para classificação de intenções
+    const GEMINI_CONFIG = {
+        apiKey: 'AIzaSyBi--ayKHMIloAF5dRI7O4zf9mVY0FMwGg',
+        model: 'gemini-2.0-flash',
+        endpoint: 'https://generativelanguage.googleapis.com/v1beta/models'
+    };
+
+    // Lista de categorias de intenção disponíveis para classificação LLM
+    const INTENT_CATEGORIES = [
+        'contato_whatsapp',      // Pedidos de contato, telefone, WhatsApp
+        'contato_email',         // Pedidos de email
+        'contato_redes',         // Redes sociais
+        'canton_fair_geral',     // O que é a Canton Fair
+        'canton_fair_tamanho',   // Tamanho, números, estatísticas
+        'canton_fair_experiencia', // Como é participar
+        'canton_fair_porque_ir', // Vantagens de ir
+        'canton_fair_local',     // Onde fica, cidade
+        'datas_proxima',         // Quando é a próxima edição
+        'fases_geral',           // Como funciona a divisão em fases
+        'fase_1',                // Fase 1 - eletrônicos, tecnologia
+        'fase_2',                // Fase 2 - casa, decoração
+        'fase_3',                // Fase 3 - moda, brinquedos
+        'starvision_sobre',      // Quem é a Starvision
+        'missao',                // O que é a Missão Código China
+        'lider_rodrigo',         // Sobre Rodrigo Lima
+        'lider_antonio',         // Sobre Antonio Fogaça
+        'lideres_ambos',         // Quem lidera a missão
+        'pacote_completo',       // O que inclui o pacote
+        'pacote_preparacao',     // Preparação antes da viagem
+        'pacote_logistica',      // Passagens, hotel, transporte
+        'servicos_feira',        // Suporte durante a feira
+        'servicos_tradutor',     // Tradutores, idioma
+        'servicos_analise',      // Análise de fornecedores
+        'investimento',          // Preço, valor, quanto custa
+        'objetivos',             // Objetivos da missão
+        'networking',            // Networking, contatos
+        'china_cultura',         // Cultura chinesa
+        'china_seguranca',       // Segurança na China
+        'china_cidades',         // Hong Kong, Shenzhen, Guangzhou
+        'china_clima',           // Clima, o que vestir
+        'china_gastronomia',     // Comida chinesa
+        'tecnologia_robos',      // Robôs, automação
+        'tecnologia_inovacao',   // Inovação na China
+        'agradecimento',         // Obrigado
+        'despedida',             // Tchau
+        'duvida_geral',          // Dúvidas gerais
+        'primeira_vez',          // Primeira viagem
+        'medo_inseguranca',      // Receios
+        'comparacao',            // Diferenciais da Starvision
+        'site_informacoes'       // Sobre o site
+    ];
+
     // Tom da Estela: linguagem humana, sem emoji, frases curtas, educada mas direta
     const EXPRESSIONS = {
         starters: ['Olha,', 'Sabe,', 'Então,', ''],
@@ -588,6 +640,120 @@
         return response;
     }
 
+    // ========== CLASSIFICAÇÃO LLM COM GEMINI ==========
+
+    // Mapeamento de categorias LLM para respostas do KNOWLEDGE_BASE
+    const CATEGORY_RESPONSES = {
+        'contato_whatsapp': { response: () => KNOWLEDGE_BASE.contato.whatsapp, triggerWhatsApp: true },
+        'contato_email': { response: () => KNOWLEDGE_BASE.contato.email },
+        'contato_redes': { response: () => KNOWLEDGE_BASE.contato.redes },
+        'canton_fair_geral': { response: () => getRandomItem(KNOWLEDGE_BASE.cantonFair.geral) },
+        'canton_fair_tamanho': { response: () => KNOWLEDGE_BASE.cantonFair.tamanho },
+        'canton_fair_experiencia': { response: () => KNOWLEDGE_BASE.cantonFair.experiencia },
+        'canton_fair_porque_ir': { response: () => KNOWLEDGE_BASE.cantonFair.porqueIr },
+        'canton_fair_local': { response: () => KNOWLEDGE_BASE.cantonFair.local },
+        'datas_proxima': { response: () => KNOWLEDGE_BASE.datas.proxima },
+        'fases_geral': { response: () => KNOWLEDGE_BASE.datas.fases },
+        'fase_1': { response: () => KNOWLEDGE_BASE.datas.fase1 },
+        'fase_2': { response: () => KNOWLEDGE_BASE.datas.fase2 },
+        'fase_3': { response: () => KNOWLEDGE_BASE.datas.fase3 },
+        'starvision_sobre': { response: () => KNOWLEDGE_BASE.starvision.sobre },
+        'missao': { response: () => KNOWLEDGE_BASE.starvision.missao },
+        'lider_rodrigo': { response: () => KNOWLEDGE_BASE.lideres.rodrigo },
+        'lider_antonio': { response: () => KNOWLEDGE_BASE.lideres.antonio },
+        'lideres_ambos': { response: () => KNOWLEDGE_BASE.lideres.ambos },
+        'pacote_completo': { response: () => KNOWLEDGE_BASE.pacote.completo, triggerWhatsApp: true },
+        'pacote_preparacao': { response: () => KNOWLEDGE_BASE.pacote.preparacao },
+        'pacote_logistica': { response: () => KNOWLEDGE_BASE.pacote.logistica },
+        'servicos_feira': { response: () => KNOWLEDGE_BASE.servicos.feira, triggerWhatsApp: true },
+        'servicos_tradutor': { response: () => "Não se preocupe com o idioma.\nNossa equipe conta com tradutores profissionais para garantir uma comunicação clara e segura durante todo o processo." },
+        'servicos_analise': { response: () => KNOWLEDGE_BASE.servicos.analise, triggerWhatsApp: true },
+        'investimento': { response: () => KNOWLEDGE_BASE.investimento.valor, triggerWhatsApp: true },
+        'objetivos': { response: () => KNOWLEDGE_BASE.objetivos.geral, triggerWhatsApp: true },
+        'networking': { response: () => KNOWLEDGE_BASE.objetivos.networking, triggerWhatsApp: true },
+        'china_cultura': { response: () => KNOWLEDGE_BASE.china.cultura },
+        'china_seguranca': { response: () => KNOWLEDGE_BASE.china.seguranca },
+        'china_cidades': { response: () => KNOWLEDGE_BASE.china.cidades },
+        'china_clima': { response: () => KNOWLEDGE_BASE.china.clima },
+        'china_gastronomia': { response: () => KNOWLEDGE_BASE.china.gastronomia },
+        'tecnologia_robos': { response: () => KNOWLEDGE_BASE.tecnologia.robos },
+        'tecnologia_inovacao': { response: () => KNOWLEDGE_BASE.tecnologia.inovacao },
+        'agradecimento': { response: () => "Imagina, foi um prazer te ajudar.\n\nSe quiser informações mais detalhadas ou uma proposta personalizada, nossos especialistas estão à disposição pelo WhatsApp.\n\nPosso te conectar com eles?" },
+        'despedida': { response: () => "Até mais. Foi bom conversar com você.\n\nQuando quiser saber mais sobre a Canton Fair ou a Missão Código China, é só voltar aqui.\n\nBons negócios." },
+        'duvida_geral': { response: () => "Claro, estou aqui pra isso.\n\nPosso te contar sobre:\n\n**Canton Fair** - a maior feira do mundo\n**Missão Código China** - nossa imersão completa\n**Datas e Fases** - quando acontece cada etapa\n**Quem lidera** - nossos especialistas\n**O que inclui** - todo o pacote\n**Contato** - telefone, WhatsApp, email\n\nQual tema te interessa mais?" },
+        'primeira_vez': { response: () => "Primeira vez pensando em ir à China? Que bom.\n\nA Missão Código China é ideal pra você. Temos toda uma preparação antes da viagem:\n\n• Workshops de estratégia e negociação\n• Aulas de mandarim básico\n• Orientação personalizada pro seu segmento\n\nE durante a feira você nunca fica sozinho. Consultores e tradutores te acompanham em todo momento." },
+        'medo_inseguranca': { response: () => "Entendo perfeitamente. É normal ter um pouco de receio quando é uma experiência nova.\n\nMas olha só: a Starvision já levou centenas de empresários pra China, muitos na primeira viagem internacional de negócios deles.\n\n**Por que ficar tranquilo:**\n• Preparação completa antes de ir\n• Consultores experientes acompanhando\n• Tradutores profissionais\n• Hotéis de categoria superior\n• Suporte durante toda a viagem\n\nVocê está em boas mãos." },
+        'comparacao': { response: () => "O que faz a Missão Código China especial?\n\n**Nossos diferenciais:**\n• 20+ anos de experiência no mercado\n• Preparação completa antes da viagem\n• Consultores que já fizeram 18+ edições\n• 300+ fábricas auditadas pelo CEO\n• Tradutores profissionais in loco\n• Análise de fornecedores\n• Networking com outros empresários BR\n• Suporte pós-viagem\n\nNão é só uma viagem turística. É uma experiência de transformação empresarial completa." },
+        'site_informacoes': { response: () => "Você está no lugar certo.\n\nEste site (codigochina.com) tem todas as informações sobre a Missão.\n\nRolando a página você encontra:\n• Sobre a Canton Fair\n• As 3 fases da feira\n• Quem lidera a missão\n• Todo o pacote incluso\n• Formulário de contato\n\nMas se preferir, posso te explicar qualquer parte aqui no chat. O que quer saber?" }
+    };
+
+    // Função para classificar intenção usando Gemini API
+    async function classifyWithLLM(message) {
+        const url = `${GEMINI_CONFIG.endpoint}/${GEMINI_CONFIG.model}:generateContent?key=${GEMINI_CONFIG.apiKey}`;
+
+        const prompt = `Você é um classificador de intenções para um chatbot de uma empresa que leva empresários brasileiros para a Canton Fair na China.
+
+CATEGORIAS DISPONÍVEIS:
+${INTENT_CATEGORIES.join(', ')}
+
+MENSAGEM DO USUÁRIO: "${message}"
+
+TAREFA: Analise a mensagem e retorne as 3 categorias mais prováveis que representam a intenção do usuário, ordenadas por relevância.
+
+REGRAS:
+- Use APENAS categorias da lista acima
+- A primeira categoria deve ser a mais provável
+- Se a mensagem for sobre preço/valor/investimento, use "investimento"
+- Se for sobre contato/telefone/whatsapp, use "contato_whatsapp"
+- Se for sobre idioma/tradutor/mandarim, use "servicos_tradutor"
+
+Responda APENAS com JSON válido no formato:
+{"intents": ["categoria1", "categoria2", "categoria3"]}`;
+
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    contents: [{ parts: [{ text: prompt }] }],
+                    generationConfig: {
+                        temperature: 0.1,
+                        maxOutputTokens: 100
+                    }
+                })
+            });
+
+            if (!response.ok) {
+                console.warn('Gemini API error:', response.status);
+                return null;
+            }
+
+            const data = await response.json();
+            const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+
+            // Extrair JSON da resposta
+            const jsonMatch = text.match(/\{[\s\S]*\}/);
+            if (jsonMatch) {
+                const parsed = JSON.parse(jsonMatch[0]);
+                console.log('LLM Classification:', parsed);
+                return parsed;
+            }
+        } catch (error) {
+            console.warn('LLM Classification error:', error);
+        }
+        return null;
+    }
+
+    // Função que busca resposta por categoria LLM
+    function getResponseByCategory(category) {
+        const mapping = CATEGORY_RESPONSES[category];
+        if (mapping) {
+            return mapping;
+        }
+        return null;
+    }
+
+
     // Inicialização
     function init() {
         elements = {
@@ -786,45 +952,75 @@
         }
     }
 
-    function handleFreeConversation(message) {
-        const intention = detectIntention(message);
+    async function handleFreeConversation(message) {
+        // Mostra indicador de digitação enquanto processa
+        showTypingIndicator();
 
-        setTimeout(() => {
-            showTypingIndicator();
-            setTimeout(() => {
-                hideTypingIndicator();
+        let intention = null;
+        let usedLLM = false;
 
-                let response;
-                let shouldOfferWhatsApp = false;
+        try {
+            // Primeiro tenta classificar com LLM
+            const llmResult = await classifyWithLLM(message);
 
-                if (intention) {
-                    response = intention.response();
-                    if (intention.triggerWhatsApp) {
-                        shouldOfferWhatsApp = true;
+            if (llmResult && llmResult.intents && llmResult.intents.length > 0) {
+                // Tenta cada categoria retornada pelo LLM até encontrar uma válida
+                for (const category of llmResult.intents) {
+                    const categoryResponse = getResponseByCategory(category);
+                    if (categoryResponse) {
+                        intention = categoryResponse;
+                        usedLLM = true;
+                        console.log('Using LLM category:', category);
+                        break;
                     }
-                } else {
-                    response = getRandomItem(DEFAULT_RESPONSES);
                 }
+            }
+        } catch (error) {
+            console.warn('LLM failed, using local fallback:', error);
+        }
 
-                // Humaniza a resposta ocasionalmente
-                response = humanizeResponse(response, chatState.userName);
+        // Fallback: usa detecção local se LLM não retornou nada útil
+        if (!intention) {
+            intention = detectIntention(message);
+            if (intention) {
+                console.log('Using local detection (fallback)');
+            }
+        }
 
-                addBotMessage(response);
-                chatState.conversationHistory.push({ role: 'bot', message: response });
+        // Processa a resposta
+        setTimeout(() => {
+            hideTypingIndicator();
 
-                // Oferecer WhatsApp após várias interações ou se trigger
-                if (shouldOfferWhatsApp) {
-                    setTimeout(() => {
-                        addWhatsAppButton();
-                    }, 1000);
-                } else if (chatState.interactionCount >= CONFIG.maxInteractionsBeforeWhatsApp && !chatState.hasOfferedWhatsApp) {
-                    setTimeout(() => {
-                        offerWhatsAppConnection();
-                    }, 2000);
+            let response;
+            let shouldOfferWhatsApp = false;
+
+            if (intention) {
+                response = intention.response();
+                if (intention.triggerWhatsApp) {
+                    shouldOfferWhatsApp = true;
                 }
+            } else {
+                response = getRandomItem(DEFAULT_RESPONSES);
+            }
 
-            }, CONFIG.typingDelay);
-        }, CONFIG.messageDelay);
+            // Humaniza a resposta ocasionalmente
+            response = humanizeResponse(response, chatState.userName);
+
+            addBotMessage(response);
+            chatState.conversationHistory.push({ role: 'bot', message: response });
+
+            // Oferecer WhatsApp após várias interações ou se trigger
+            if (shouldOfferWhatsApp) {
+                setTimeout(() => {
+                    addWhatsAppButton();
+                }, 1000);
+            } else if (chatState.interactionCount >= CONFIG.maxInteractionsBeforeWhatsApp && !chatState.hasOfferedWhatsApp) {
+                setTimeout(() => {
+                    offerWhatsAppConnection();
+                }, 2000);
+            }
+
+        }, CONFIG.typingDelay);
     }
 
     function offerWhatsAppConnection() {
