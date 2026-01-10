@@ -730,7 +730,10 @@
         // Palavras-chave que NÃO devem ser aceitas como nome
         const contactKeywords = [
             'contato', 'whatsapp', 'whats', 'zap', 'telefone', 'fone',
-            'numero', 'celular', 'ligar', 'email', 'qual contato'
+            'numero', 'celular', 'ligar', 'email', 'qual contato',
+            'qual o contato', 'qual e o contato', 'qual o numero',
+            'qual o telefone', 'qual o whatsapp', 'quero contato',
+            'preciso do contato', 'me passa o contato'
         ];
 
         const normalizedMsg = message.toLowerCase()
