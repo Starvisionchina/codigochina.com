@@ -17,10 +17,10 @@
     };
 
     // Configuração da API Gemini para classificação de intenções
+    // API key agora é gerenciada de forma segura via Netlify Functions
     const GEMINI_CONFIG = {
-        apiKey: 'AIzaSyBi--ayKHMIloAF5dRI7O4zf9mVY0FMwGg',
         model: 'gemini-2.0-flash',
-        endpoint: 'https://generativelanguage.googleapis.com/v1beta/models'
+        proxyEndpoint: '/api/gemini'  // Proxy seguro - API key no servidor
     };
 
     // Lista de categorias de intenção disponíveis para classificação LLM
@@ -687,10 +687,8 @@
         'site_informacoes': { response: () => "Você está no lugar certo.\n\nEste site (codigochina.com) tem todas as informações sobre a Missão.\n\nRolando a página você encontra:\n• Sobre a Canton Fair\n• As 3 fases da feira\n• Quem lidera a missão\n• Todo o pacote incluso\n• Formulário de contato\n\nMas se preferir, posso te explicar qualquer parte aqui no chat. O que quer saber?" }
     };
 
-    // Função para classificar intenção usando Gemini API
+    // Função para classificar intenção usando Gemini API (via proxy seguro)
     async function classifyWithLLM(message) {
-        const url = `${GEMINI_CONFIG.endpoint}/${GEMINI_CONFIG.model}:generateContent?key=${GEMINI_CONFIG.apiKey}`;
-
         const prompt = `Você é um classificador de intenções para um chatbot de uma empresa que leva empresários brasileiros para a Canton Fair na China.
 
 CATEGORIAS DISPONÍVEIS:
@@ -711,10 +709,12 @@ Responda APENAS com JSON válido no formato:
 {"intents": ["categoria1", "categoria2", "categoria3"]}`;
 
         try {
-            const response = await fetch(url, {
+            // Usa proxy seguro - API key permanece no servidor
+            const response = await fetch(GEMINI_CONFIG.proxyEndpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
+                    model: GEMINI_CONFIG.model,
                     contents: [{ parts: [{ text: prompt }] }],
                     generationConfig: {
                         temperature: 0.1,

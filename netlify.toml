@@ -1,6 +1,12 @@
 [build]
   publish = "."
   command = ""
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/gemini"
+  to = "/.netlify/functions/gemini-proxy"
+  status = 200
 
 [[redirects]]
   from = "/*"
