@@ -47,7 +47,8 @@
                 user_data: userData,
                 custom_data: customData,
                 fbc: fbc,
-                fbp: fbp
+                fbp: fbp,
+                client_user_agent: navigator.userAgent
             };
 
             const response = await fetch(META_API_ENDPOINT, {

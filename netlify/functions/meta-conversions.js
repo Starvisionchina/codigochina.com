@@ -63,8 +63,15 @@ exports.handler = async (event, context) => {
             custom_data = {},
             event_source_url,
             fbc,
-            fbp
+            fbp,
+            client_user_agent
         } = requestBody;
+
+        // Obter IP do cliente dos headers do Netlify
+        const clientIp = event.headers['x-forwarded-for']?.split(',')[0]?.trim()
+            || event.headers['client-ip']
+            || event.headers['x-real-ip']
+            || '0.0.0.0';
 
         if (!event_name) {
             return {
@@ -104,6 +111,12 @@ exports.handler = async (event, context) => {
         // Adicionar fbc/fbp se disponível
         if (fbc) hashedUserData.fbc = fbc;
         if (fbp) hashedUserData.fbp = fbp;
+
+        // Adicionar client_ip_address e client_user_agent (obrigatório para CAPI)
+        hashedUserData.client_ip_address = clientIp;
+        if (client_user_agent) {
+            hashedUserData.client_user_agent = client_user_agent;
+        }
 
         // Montar payload do evento
         const eventData = {
