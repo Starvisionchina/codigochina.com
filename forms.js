@@ -129,6 +129,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
             console.log('✅ Email enviado com sucesso:', response);
             showSuccess();
+
+            // Enviar evento Lead para Meta Conversions API
+            if (window.MetaTracking) {
+                window.MetaTracking.trackLead({
+                    email: templateParams.email,
+                    phone: templateParams.whatsapp,
+                    first_name: templateParams.nome.split(' ')[0],
+                    last_name: templateParams.nome.split(' ').slice(1).join(' ') || ''
+                });
+            }
+
             form.reset();
 
             // Resetar bordas dos campos
