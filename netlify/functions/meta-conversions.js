@@ -132,7 +132,9 @@ exports.handler = async (event, context) => {
 
         // Payload para Meta API
         const metaPayload = {
-            data: [eventData]
+            data: [eventData],
+            // Test event code para verificação no Meta Business
+            test_event_code: 'TEST81910'
         };
 
         console.log('Sending event to Meta:', event_name);
