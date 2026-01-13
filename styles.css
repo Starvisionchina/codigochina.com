@@ -587,6 +587,9 @@ img {
     animation: ctaBlink 1.2s ease-in-out infinite;
     text-decoration: none;
     white-space: nowrap;
+    position: relative;
+    z-index: 10;
+    margin-top: -60px;
 }
 
 .cta-yellow-blink:hover {
@@ -605,6 +608,7 @@ img {
         font-size: 0.85rem;
         padding: 15px 30px;
         letter-spacing: 1px;
+        margin-top: -50px;
     }
 }
 
