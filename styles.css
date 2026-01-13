@@ -554,6 +554,51 @@ img {
 }
 
 /* ========================================
+   CTA AMARELO PISCANDO
+======================================== */
+@keyframes ctaBlink {
+
+    0%,
+    100% {
+        background: linear-gradient(to bottom, #FFD700, #FFA500);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 165, 0, 0.4);
+    }
+
+    50% {
+        background: linear-gradient(to bottom, #FFEC8B, #FFD700);
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.9), 0 0 60px rgba(255, 165, 0, 0.6);
+    }
+}
+
+.cta-yellow-blink {
+    display: inline-block;
+    font-family: var(--font-title);
+    background: linear-gradient(to bottom, #FFD700, #FFA500);
+    color: #000000 !important;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 20px 60px;
+    border-radius: 50px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 165, 0, 0.4);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    cursor: pointer;
+    animation: ctaBlink 1.2s ease-in-out infinite;
+    text-decoration: none;
+}
+
+.cta-yellow-blink:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.9), 0 0 80px rgba(255, 165, 0, 0.7);
+    animation-play-state: paused;
+}
+
+.cta-yellow-blink:active {
+    transform: translateY(-1px);
+}
+
+/* ========================================
    STATS SECTION
 ======================================== */
 .stats {

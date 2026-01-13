@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Missão Código China 2026 - Canton Fair, Hong Kong, Shenzhen e Guangzhou. Sua oportunidade de fazer negócios na China.">
+        content="Missão Código China 2026 - A viagem de negócios para a Canton Fair em Hong Kong, Shenzhen e Guangzhou. Transforme sua empresa com a maior missão empresarial para a China.">
     <meta name="keywords"
-        content="Canton Fair, Starvision, Starvision China, Starvisionchina, Rodrigo Lima, Lima na china, limanachina, Chinalink, import melhor, vettros importação, ntl comex, ces20226, pablo marçal, metodo12p, gustavoimportação, gustavooliveiraimportação, yuanunpackschina, antonio fogaça, brasil importação china, China, Importação, Exportação, Negócios, Hong Kong, Shenzhen, Guangzhou, missão para Canton Fair, viagem empresarial China, missão de negócios China, feira Canton, fornecedores China, qualificação de fornecedores China, inspeção China, importação segura China.">
+        content="missão código china, missao codigo china, Missão Código China 2026, Canton Fair, missão Canton Fair, viagem Canton Fair 2026, Starvision, Starvision China, Starvisionchina, Rodrigo Lima, Lima na china, limanachina, Chinalink, import melhor, vettros importação, ntl comex, ces20226, pablo marçal, metodo12p, gustavoimportação, gustavooliveiraimportação, yuanunpackschina, antonio fogaça, brasil importação china, China, Importação, Exportação, Negócios, Hong Kong, Shenzhen, Guangzhou, missão para Canton Fair, viagem empresarial China, missão de negócios China, feira Canton, fornecedores China, qualificação de fornecedores China, inspeção China, importação segura China, código china, codigochina, codigo china.">
     <meta name="author" content="Starvision">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://codigochina.com/">
@@ -76,7 +76,7 @@
     }
     </script>
 
-    <title>Missão Código China 2026 | Starvision</title>
+    <title>Missão Código China 2026 | Canton Fair - Starvision</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/header/favicon.ico">
@@ -164,10 +164,98 @@
                     <p class="hero__locations">HONG KONG - SHENZHEN - GUANGZHOU</p>
                 </div>
 
-                <a href="#inscricao" class="hero__cta" title="Inscreva-se para ir à China em 2026">
+                <a href="#inscricao" class="cta-yellow-blink" title="Inscreva-se para ir à China em 2026">
                     QUERO IR PARA A CHINA EM 2026
                 </a>
 
+            </div>
+        </section>
+
+        <!-- Contact Form Section (Primeira Seção após Hero) -->
+        <section id="inscricao" class="contact-form" aria-labelledby="form-title">
+            <div class="contact-form__container">
+                <br>
+                <header class="contact-form__header">
+                    <h2 class="contact-form__title">Participe da Missão China com a Starvision</h2>
+                    <p class="contact-form__subtitle">Preencha o formulário e converse com um de nossos especialistas.
+                    </p>
+                </header>
+                <div class="contact-form__row">
+                    <!-- Formulário EmailJS -->
+                    <div class="starvision-form-wrapper">
+                        <form id="starvisionForm" class="starvision-form">
+                            <!-- Nome -->
+                            <div class="form-field">
+                                <label for="nome" class="form-label">
+                                    <span class="label-text">Nome: *</span>
+                                </label>
+                                <input type="text" id="nome" name="nome" class="form-input"
+                                    placeholder="Responda aqui..." required>
+                            </div>
+
+                            <!-- Empresa -->
+                            <div class="form-field">
+                                <label for="empresa" class="form-label">
+                                    <span class="label-text">Empresa: *</span>
+                                </label>
+                                <input type="text" id="empresa" name="empresa" class="form-input"
+                                    placeholder="Nome da empresa" required>
+                            </div>
+
+                            <!-- WhatsApp -->
+                            <div class="form-field">
+                                <label for="whatsapp" class="form-label">
+                                    <span class="label-text">Whatsapp: *</span>
+                                </label>
+                                <input type="tel" id="whatsapp" name="whatsapp" class="form-input"
+                                    placeholder="(11) 99999-9999" pattern="^\+?( ?[\(]?[\-]?[0-9][\)]?){6,13}$"
+                                    required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-field">
+                                <label for="email" class="form-label">
+                                    <span class="label-text">E-mail: *</span>
+                                </label>
+                                <input type="email" id="email" name="email" class="form-input"
+                                    placeholder="seuemail@exemplo.com"
+                                    pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9_\-]+[.]+[a-zA-Z0-9\-.]{2,61}$" required>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="form-submit-btn">
+                                <span class="btn-text">CADASTRE-SE</span>
+                                <span class="btn-loader" style="display: none;">
+                                    <span class="spinner"></span>
+                                    Enviando...
+                                </span>
+                            </button>
+
+                            <!-- Success/Error Messages -->
+                            <div class="form-message success-message" id="successMessage" style="display: none;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span>Formulário enviado com sucesso! Entraremos em contato em breve.</span>
+                            </div>
+
+                            <div class="form-message error-message" id="errorMessage" style="display: none;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12 8V12M12 16H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <span id="errorText">Erro ao enviar formulário. Tente novamente.</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -306,7 +394,7 @@
 
                     <p class="jornada__date">Abril de 2026</p>
 
-                    <a href="#inscricao" class="jornada__cta" title="Inscreva-se para ir à China em 2026">
+                    <a href="#inscricao" class="cta-yellow-blink" title="Inscreva-se para ir à China em 2026">
                         QUERO IR PARA A CHINA EM 2026
                     </a>
                 </div>
@@ -535,7 +623,7 @@
                 </article>
             </div>
 
-            <a href="#inscricao" class="services__cta" title="Quero ir para China em 2026">
+            <a href="#inscricao" class="cta-yellow-blink" title="Quero ir para China em 2026">
                 QUERO IR PARA A CHINA EM 2026
             </a>
             <br>
@@ -800,98 +888,10 @@
                 </article>
             </div>
 
-            <a href="#inscricao" class="incluso__cta" title="Quero ir para China em 2026">
+            <a href="#inscricao" class="cta-yellow-blink" title="Quero ir para China em 2026">
                 QUERO IR PARA A CHINA EM 2026
             </a>
             <br>
-        </section>
-
-        <!-- Contact Form Section -->
-        <section id="inscricao" class="contact-form" aria-labelledby="form-title">
-            <div class="contact-form__container">
-                <br>
-                <header class="contact-form__header">
-                    <h2 class="contact-form__title">Participe da Missão Código China com a Starvision</h2>
-                    <p class="contact-form__subtitle">Preencha o formulário e converse com um de nossos especialistas.
-                    </p>
-                </header>
-                <div class="contact-form__row">
-                    <!-- Formulário EmailJS -->
-                    <div class="starvision-form-wrapper">
-                        <form id="starvisionForm" class="starvision-form">
-                            <!-- Nome -->
-                            <div class="form-field">
-                                <label for="nome" class="form-label">
-                                    <span class="label-text">Nome: *</span>
-                                </label>
-                                <input type="text" id="nome" name="nome" class="form-input"
-                                    placeholder="Responda aqui..." required>
-                            </div>
-
-                            <!-- Empresa -->
-                            <div class="form-field">
-                                <label for="empresa" class="form-label">
-                                    <span class="label-text">Empresa: *</span>
-                                </label>
-                                <input type="text" id="empresa" name="empresa" class="form-input"
-                                    placeholder="Nome da empresa" required>
-                            </div>
-
-                            <!-- WhatsApp -->
-                            <div class="form-field">
-                                <label for="whatsapp" class="form-label">
-                                    <span class="label-text">Whatsapp: *</span>
-                                </label>
-                                <input type="tel" id="whatsapp" name="whatsapp" class="form-input"
-                                    placeholder="(11) 99999-9999" pattern="^\+?( ?[\(]?[\-]?[0-9][\)]?){6,13}$"
-                                    required>
-                            </div>
-
-                            <!-- Email -->
-                            <div class="form-field">
-                                <label for="email" class="form-label">
-                                    <span class="label-text">E-mail: *</span>
-                                </label>
-                                <input type="email" id="email" name="email" class="form-input"
-                                    placeholder="seuemail@exemplo.com"
-                                    pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9_\-]+[.]+[a-zA-Z0-9\-.]{2,61}$" required>
-                            </div>
-
-                            <!-- Submit Button -->
-                            <button type="submit" class="form-submit-btn">
-                                <span class="btn-text">CADASTRE-SE</span>
-                                <span class="btn-loader" style="display: none;">
-                                    <span class="spinner"></span>
-                                    Enviando...
-                                </span>
-                            </button>
-
-                            <!-- Success/Error Messages -->
-                            <div class="form-message success-message" id="successMessage" style="display: none;">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                                <span>Formulário enviado com sucesso! Entraremos em contato em breve.</span>
-                            </div>
-
-                            <div class="form-message error-message" id="errorMessage" style="display: none;">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M12 8V12M12 16H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                                <span id="errorText">Erro ao enviar formulário. Tente novamente.</span>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- Social Media Section -->
