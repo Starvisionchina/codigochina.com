@@ -397,7 +397,7 @@ img {
     width: 100%;
     height: auto;
     position: relative;
-    z-index: 2;
+    z-index: 15;
 }
 
 /* Dramatic Entrance with Dark to Light Transition */
