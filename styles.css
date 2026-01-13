@@ -61,7 +61,7 @@ html {
 
 * {
     margin: 0;
-    padding: 0;
+    padding: 2px;
     box-sizing: border-box;
 }
 
@@ -704,11 +704,11 @@ img {
 
 .contact-form__title {
     font-family: var(--font-title);
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 100;
     font-style: italic;
     color: #fff;
-    margin-bottom: 15px;
+    margin-bottom: 9px;
 }
 
 .contact-form__subtitle {
