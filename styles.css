@@ -503,7 +503,7 @@ img {
 }
 
 .hero__subtitle {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     text-align: inherit;
 }
 
@@ -688,7 +688,7 @@ img {
     background: #0d0f0e;
     position: relative;
     color: #fff;
-    min-height: 700px;
+    min-height: 500px;
 }
 
 .contact-form__container {
