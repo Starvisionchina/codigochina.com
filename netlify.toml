@@ -3,6 +3,33 @@
   command = ""
   functions = "netlify/functions"
 
+# Headers para SEO
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "index, follow"
+
+# Redirect HTTP para HTTPS
+[[redirects]]
+  from = "http://codigochina.com/*"
+  to = "https://codigochina.com/:splat"
+  status = 301
+  force = true
+
+# Redirect www para non-www
+[[redirects]]
+  from = "https://www.codigochina.com/*"
+  to = "https://codigochina.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.codigochina.com/*"
+  to = "https://codigochina.com/:splat"
+  status = 301
+  force = true
+
+# API redirects
 [[redirects]]
   from = "/api/gemini"
   to = "/.netlify/functions/gemini-proxy"
@@ -13,7 +40,9 @@
   to = "/.netlify/functions/meta-conversions"
   status = 200
 
+# SPA fallback - Netlify serve arquivos existentes (robots.txt, sitemap.xml) automaticamente
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
