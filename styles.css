@@ -1393,11 +1393,10 @@ img {
 }
 
 .phases__image {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #d4af37;
+    width: auto;
+    max-width: 250px;
+    height: auto;
+    border: none;
     position: relative;
     z-index: 2;
     margin-bottom: -40px;
@@ -1453,8 +1452,9 @@ img {
     }
 
     .phases__image {
-        width: 300px;
-        height: 300px;
+        max-width: 300px;
+        width: auto;
+        height: auto;
         margin-bottom: 0;
         margin-right: -60px;
         flex-shrink: 0;
