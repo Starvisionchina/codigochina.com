@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const errorText = document.getElementById('errorText');
 
     // Máscara de telefone
-    const whatsappInput = document.getElementById('whatsapp');
-    whatsappInput.addEventListener('input', function (e) {
+    const telefoneInput = document.getElementById('telefone');
+    telefoneInput.addEventListener('input', function (e) {
         let value = e.target.value.replace(/\D/g, '');
 
         if (value.length <= 11) {
@@ -43,8 +43,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Validar campo individual
+    // Validar campo individual (email é opcional)
     function validateField(field) {
+        // Email é opcional - válido se vazio ou se formato correto
+        if (field.id === 'email') {
+            if (field.value.trim() === '' || field.validity.valid) {
+                field.style.borderColor = field.value.trim() ? '#51cf66' : 'transparent';
+                return true;
+            } else {
+                field.style.borderColor = '#ff6b6b';
+                return false;
+            }
+        }
+
         if (field.validity.valid) {
             field.style.borderColor = '#51cf66';
             return true;
@@ -103,16 +114,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         if (!isValid) {
-            showError('Por favor, preencha todos os campos corretamente.');
+            showError('Por favor, preencha os campos obrigatórios.');
             return;
         }
 
         // Preparar dados para EmailJS
         const templateParams = {
             nome: document.getElementById('nome').value.trim(),
-            email: document.getElementById('email').value.trim(),
-            whatsapp: document.getElementById('whatsapp').value.trim(),
-            empresa: document.getElementById('empresa').value.trim(),
+            telefone: document.getElementById('telefone').value.trim(),
+            email: document.getElementById('email').value.trim() || 'não informado',
             from_name: document.getElementById('nome').value.trim()
         };
 
@@ -133,8 +143,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Enviar evento Lead para Meta Conversions API
             if (window.MetaTracking) {
                 window.MetaTracking.trackLead({
-                    email: templateParams.email,
-                    phone: templateParams.whatsapp,
+                    email: templateParams.email !== 'não informado' ? templateParams.email : '',
+                    phone: templateParams.telefone,
                     first_name: templateParams.nome.split(' ')[0],
                     last_name: templateParams.nome.split(' ').slice(1).join(' ') || ''
                 });
@@ -157,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Enter para submeter no último campo
     inputs.forEach(input => {
         input.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter' && input === document.getElementById('empresa')) {
+            if (e.key === 'Enter' && input === document.getElementById('email')) {
                 e.preventDefault();
                 form.dispatchEvent(new Event('submit'));
             }

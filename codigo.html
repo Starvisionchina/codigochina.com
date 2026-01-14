@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Missão Código China 2026 - Leve seu negócio para a China com a Starvision">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords"
+        content="missão código china, missao codigo china, Missão Código China 2026, Canton Fair, missão Canton Fair, viagem Canton Fair 2026, Starvision, Starvision China, Starvisionchina, Rodrigo Lima, Lima na china, limanachina, Chinalink, import melhor, vettros importação, ntl comex, ces20226, pablo marçal, metodo12p, gustavoimportação, gustavooliveiraimportação, yuanunpackschina, antonio fogaça, brasil importação china, China, Importação, Exportação, Negócios, Hong Kong, Shenzhen, Guangzhou, missão para Canton Fair, viagem empresarial China, missão de negócios China, feira Canton, fornecedores China, qualificação de fornecedores China, inspeção China, importação segura China, código china, codigochina, codigo china.">
+    <title>Missão Código China 2026 | Starvision</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/header/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/header/logo-starvision.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            min-height: 100vh;
+            background: #1a1a2e;
+        }
+
+        /* Main Container - Full Background */
+        .landing-container {
+            display: flex;
+            min-height: 100vh;
+            position: relative;
+            background-image: url('assets/images/hero/hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .landing-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 30, 30, 0.75) 0%, rgba(107, 15, 15, 0.65) 100%);
+            z-index: 1;
+        }
+
+        /* Left Column - Branding */
+        .branding-column {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .branding-content {
+            text-align: center;
+            padding: 20px;
+            padding-left: 100px;
+        }
+
+        .branding-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(139, 30, 30, 0.85) 0%, rgba(107, 15, 15, 0.9) 100%);
+        }
+
+        .branding-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .branding-logo {
+            max-width: 735px;
+            width: 141%;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Right Column - Form */
+        .form-column {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 42px 40px 80px 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-wrapper {
+            width: 100%;
+            max-width: 600px;
+            background: #8B1E1E;
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .form-title {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.3;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            font-style: italic;
+            font-weight: 400;
+            margin-bottom: 35px;
+            line-height: 1.5;
+        }
+
+        .form-field {
+            margin-bottom: 22px;
+        }
+
+        .form-label {
+            display: block;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Open Sans', sans-serif;
+            background: #fff;
+            color: #333;
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .form-input::placeholder {
+            color: #999;
+        }
+
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.4);
+            border-color: #FFD700;
+            transform: translateY(-2px);
+        }
+
+        /* Submit Button with Blink Animation */
+        .form-submit-btn {
+            width: 100%;
+            padding: 18px 24px;
+            margin-top: 15px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #1a1a2e;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            font-family: 'Open Sans', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: blink 1.5s ease-in-out infinite;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+                transform: scale(1);
+            }
+
+            50% {
+                box-shadow: 0 8px 35px rgba(255, 215, 0, 0.7);
+                transform: scale(1.02);
+            }
+        }
+
+        .form-submit-btn:hover {
+            animation: none;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.6);
+        }
+
+        .form-submit-btn:active {
+            transform: translateY(0) scale(1);
+        }
+
+        .form-submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            animation: none;
+            transform: none;
+        }
+
+        .form-submit-btn .btn-loader {
+            display: none;
+        }
+
+        .form-submit-btn.loading {
+            animation: none;
+        }
+
+        .form-submit-btn.loading .btn-text {
+            display: none;
+        }
+
+        .form-submit-btn.loading .btn-loader {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .spinner {
+            width: 22px;
+            height: 22px;
+            border: 3px solid transparent;
+            border-top-color: #1a1a2e;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.4rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .social-icon:hover {
+            background: #FFD700;
+            color: #1a1a2e;
+            border-color: #FFD700;
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        .social-icon.whatsapp:hover {
+            background: #25D366;
+            border-color: #25D366;
+            color: #fff;
+        }
+
+        .social-icon.instagram:hover {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            border-color: #dc2743;
+            color: #fff;
+        }
+
+        /* Messages */
+        .form-message {
+            display: none;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+            font-size: 0.95rem;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-message {
+            background: rgba(37, 211, 102, 0.2);
+            border: 2px solid #25D366;
+            color: #fff;
+        }
+
+        .error-message {
+            background: rgba(255, 107, 107, 0.2);
+            border: 2px solid #ff6b6b;
+            color: #fff;
+        }
+
+        .form-message.show {
+            display: flex;
+        }
+
+        .form-message svg {
+            flex-shrink: 0;
+        }
+
+        /* Page Footer - Centered at bottom */
+        .page-footer {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .footer-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #fff;
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+
+        .footer-logo-img {
+            height: 28px;
+            opacity: 0.85;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-link:hover .footer-logo-img {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* Mobile Logo inside card */
+        .mobile-logo {
+            display: none;
+        }
+
+        /* Desktop title visibility */
+        .mobile-title {
+            display: none;
+        }
+
+        .desktop-title {
+            display: block;
+        }
+
+        /* Mobile footer (hidden on desktop) */
+        .mobile-footer {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .landing-container {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                min-height: 100vh;
+            }
+
+            .branding-column {
+                display: none;
+            }
+
+            .form-column {
+                flex: none;
+                width: 100%;
+                max-width: 400px;
+                padding: 0;
+                align-items: center;
+            }
+
+            .form-wrapper {
+                max-width: 100%;
+                padding: 28px 24px 24px;
+                border-radius: 16px;
+            }
+
+            /* Show mobile logo inside card */
+            .mobile-logo {
+                display: flex;
+                align-items: flex-start;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .mobile-logo-img {
+                width: 60px;
+                height: auto;
+                flex-shrink: 0;
+            }
+
+            .mobile-header-content {
+                flex: 1;
+            }
+
+            /* Show mobile title, hide desktop title on mobile */
+            .mobile-title {
+                display: block;
+            }
+
+            .desktop-title {
+                display: none;
+            }
+
+            .form-title {
+                font-size: 1.25rem;
+                margin-bottom: 10px;
+                line-height: 1.25;
+            }
+
+            .form-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 24px;
+            }
+
+            .form-label {
+                font-size: 0.85rem;
+                margin-bottom: 8px;
+            }
+
+            .form-input {
+                padding: 14px 16px;
+                font-size: 0.95rem;
+            }
+
+            .form-field {
+                margin-bottom: 18px;
+            }
+
+            .form-submit-btn {
+                padding: 16px 20px;
+                font-size: 1.1rem;
+                margin-top: 10px;
+            }
+
+            .social-icons {
+                gap: 20px;
+                margin-top: 28px;
+            }
+
+            .social-icon {
+                width: 42px;
+                height: 42px;
+                font-size: 1.2rem;
+                background: transparent;
+                border: none;
+            }
+
+            .social-icon:hover {
+                background: transparent;
+                transform: scale(1.1);
+                box-shadow: none;
+            }
+
+            /* Hide desktop footer, show mobile footer */
+            .page-footer {
+                display: none;
+            }
+
+            .mobile-footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 28px;
+                padding-top: 20px;
+                border-top: 1px solid rgba(255, 255, 255, 0.15);
+            }
+
+            .footer-link {
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .footer-text {
+                font-size: 0.75rem;
+            }
+
+            .footer-logo-img {
+                height: 22px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-wrapper {
+                padding: 24px 20px 20px;
+            }
+
+            .mobile-logo-img {
+                width: 75px;
+            }
+
+            .form-title {
+                font-size: 1.15rem;
+            }
+
+            .form-subtitle {
+                font-size: 0.85rem;
+            }
+
+            .form-input {
+                padding: 12px 14px;
+            }
+
+            .form-submit-btn {
+                padding: 14px 18px;
+                font-size: 1rem;
+            }
+        }
+
+        /* iPhone SE and smaller screens */
+        @media (max-width: 375px) {
+            .mobile-logo-img {
+                width: 72px;
+            }
+
+            .form-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 320px) {
+            .mobile-logo-img {
+                width: 65px;
+            }
+
+            .form-title {
+                font-size: 1rem;
+            }
+
+            .form-wrapper {
+                padding: 20px 16px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing-container">
+        <!-- Left Column - Branding -->
+        <div class="branding-column">
+            <div class="branding-content">
+                <picture>
+                    <source srcset="assets/images/hero/logo-missao-china.webp" type="image/webp">
+                    <img src="assets/images/hero/logo-missao-china.png" alt="Logo Missão Código China 2026"
+                        class="branding-logo">
+                </picture>
+            </div>
+        </div>
+
+        <!-- Right Column - Form -->
+        <div class="form-column">
+            <div class="form-wrapper">
+                <!-- Mobile Header with Logo -->
+                <div class="mobile-logo">
+                    <img src="assets/images/hero/logo-missao-china-mobile.png" alt="Logo Missão Código China 2026"
+                        class="mobile-logo-img">
+                    <div class="mobile-header-content">
+                        <h1 class="form-title mobile-title">A CHINA NÃO ESPERA.<br>AS OPORTUNIDADES TAMBÉM NÃO.</h1>
+                    </div>
+                </div>
+
+                <!-- Desktop Title (hidden on mobile) -->
+                <h1 class="form-title desktop-title">A CHINA NÃO ESPERA.<br>AS OPORTUNIDADES TAMBÉM NÃO.</h1>
+                <p class="form-subtitle">Preencha o formulário e converse com um de nossos especialistas.</p>
+
+                <form id="starvisionForm">
+                    <!-- Nome/Empresa -->
+                    <div class="form-field">
+                        <label for="nome" class="form-label">Nome/Empresa:*</label>
+                        <input type="text" id="nome" name="nome" class="form-input"
+                            placeholder="Seu nome ou nome da empresa" required>
+                    </div>
+
+                    <!-- Telefone -->
+                    <div class="form-field">
+                        <label for="telefone" class="form-label">Telefone:*</label>
+                        <input type="tel" id="telefone" name="telefone" class="form-input" placeholder="(11) 99999-9999"
+                            required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-field">
+                        <label for="email" class="form-label">E-mail:*</label>
+                        <input type="email" id="email" name="email" class="form-input"
+                            placeholder="seuemail@exemplo.com" required>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="form-submit-btn">
+                        <span class="btn-text">ENVIAR</span>
+                        <span class="btn-loader">
+                            <span class="spinner"></span>
+                            Enviando...
+                        </span>
+                    </button>
+
+                    <!-- Messages -->
+                    <div class="form-message success-message" id="successMessage">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>Obrigado! Em breve um de nossos especialistas entrará em contato.</span>
+                    </div>
+
+                    <div class="form-message error-message" id="errorMessage">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 8V12M12 16H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span id="errorText">Erro ao enviar formulário. Tente novamente.</span>
+                    </div>
+                </form>
+
+                <!-- Social Icons -->
+                <div class="social-icons">
+                    <a href="https://wa.me/555131031030?text=Quero%20ir%20para%20Canton%20Fair%20em%20abril%20e%20alavancar%20meu%20neg%C3%B3cio"
+                        class="social-icon whatsapp" target="_blank" rel="noopener noreferrer"
+                        title="Fale conosco no WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/starvisionchina" class="social-icon instagram" target="_blank"
+                        rel="noopener noreferrer" title="Siga no Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?text=Olha%20isso%20que%20eu%20vi%20sobre%20neg%C3%B3cios%20com%20a%20China%20via%20a%20Canton%20Fair%20e%20achei%20interessante%20https%3A%2F%2Fcodigochina.com%2Fcodigo.html"
+                        class="social-icon share" target="_blank" rel="noopener noreferrer" title="Compartilhar">
+                        <i class="fas fa-share-alt"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Footer (inside card) -->
+                <footer class="mobile-footer">
+                    <a href="https://www.instagram.com/starvisionchina" target="_blank" rel="noopener noreferrer"
+                        class="footer-link" title="@starvisionchina">
+                        <span class="footer-text">desenvolvido por @starvisionchina</span>
+                        <picture>
+                            <source srcset="assets/images/header/logo-starvision.webp" type="image/webp">
+                            <img src="assets/images/header/logo-starvision.png" alt="Starvision"
+                                class="footer-logo-img">
+                        </picture>
+                    </a>
+                </footer>
+            </div>
+        </div>
+
+        <!-- Footer Logo - Centralizado na página -->
+        <footer class="page-footer">
+            <a href="https://www.instagram.com/starvisionchina" target="_blank" rel="noopener noreferrer"
+                class="footer-link" title="@starvisionchina">
+                <span class="footer-text">desenvolvido por @starvisionchina</span>
+                <picture>
+                    <source srcset="assets/images/header/logo-starvision.webp" type="image/webp">
+                    <img src="assets/images/header/logo-starvision.png" alt="Starvision" class="footer-logo-img">
+                </picture>
+            </a>
+        </footer>
+    </div>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Form Script (inline for this standalone page) -->
+    <script>
+        // EmailJS Configuration
+        const EMAILJS_PUBLIC_KEY = 'fdD4iq2sUwr6-hswz';
+        const EMAILJS_SERVICE_ID = 'service_48xwn5h';
+        const EMAILJS_TEMPLATE_ID = 'template_kz737qk';
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize EmailJS
+            emailjs.init(EMAILJS_PUBLIC_KEY);
+
+            const form = document.getElementById('starvisionForm');
+            const submitBtn = form.querySelector('.form-submit-btn');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            const errorText = document.getElementById('errorText');
+
+            // Máscara de telefone
+            const telefoneInput = document.getElementById('telefone');
+            telefoneInput.addEventListener('input', function (e) {
+                let value = e.target.value.replace(/\D/g, '');
+
+                if (value.length <= 11) {
+                    value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+                    value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+                }
+
+                e.target.value = value;
+            });
+
+            // Validação em tempo real
+            const inputs = form.querySelectorAll('.form-input');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function () {
+                    validateField(this);
+                });
+
+                input.addEventListener('input', function () {
+                    hideMessages();
+                });
+            });
+
+            // Validar campo individual
+            function validateField(field) {
+                if (field.validity.valid && field.value.trim() !== '') {
+                    field.style.borderColor = '#25D366';
+                    field.style.boxShadow = '0 0 0 2px rgba(37, 211, 102, 0.2)';
+                    return true;
+                } else if (field.value.trim() === '') {
+                    field.style.borderColor = 'transparent';
+                    field.style.boxShadow = 'none';
+                    return false;
+                } else {
+                    field.style.borderColor = '#ff6b6b';
+                    field.style.boxShadow = '0 0 0 2px rgba(255, 107, 107, 0.2)';
+                    return false;
+                }
+            }
+
+            // Esconder mensagens
+            function hideMessages() {
+                successMessage.classList.remove('show');
+                errorMessage.classList.remove('show');
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
+            }
+
+            // Mostrar mensagem de sucesso
+            function showSuccess() {
+                hideMessages();
+                successMessage.style.display = 'flex';
+                successMessage.classList.add('show');
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            // Mostrar mensagem de erro
+            function showError(message) {
+                hideMessages();
+                errorText.textContent = message;
+                errorMessage.style.display = 'flex';
+                errorMessage.classList.add('show');
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            // Estado de loading
+            function setLoading(isLoading) {
+                if (isLoading) {
+                    submitBtn.classList.add('loading');
+                    submitBtn.disabled = true;
+                } else {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+                }
+            }
+
+            // Envio do formulário via EmailJS
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                // Validar todos os campos
+                let isValid = true;
+                inputs.forEach(input => {
+                    if (!validateField(input)) {
+                        isValid = false;
+                    }
+                });
+
+                if (!isValid) {
+                    showError('Por favor, preencha todos os campos corretamente.');
+                    return;
+                }
+
+                // Preparar dados para EmailJS
+                const templateParams = {
+                    nome: document.getElementById('nome').value.trim(),
+                    telefone: document.getElementById('telefone').value.trim(),
+                    email: document.getElementById('email').value.trim(),
+                    from_name: document.getElementById('nome').value.trim()
+                };
+
+                // Enviar via EmailJS
+                setLoading(true);
+                hideMessages();
+
+                try {
+                    const response = await emailjs.send(
+                        EMAILJS_SERVICE_ID,
+                        EMAILJS_TEMPLATE_ID,
+                        templateParams
+                    );
+
+                    console.log('✅ Email enviado com sucesso:', response);
+                    showSuccess();
+                    form.reset();
+
+                    // Resetar bordas dos campos
+                    inputs.forEach(input => {
+                        input.style.borderColor = 'transparent';
+                        input.style.boxShadow = 'none';
+                    });
+                } catch (error) {
+                    console.error('Erro:', error);
+                    showError('Erro ao enviar formulário. Tente novamente.');
+                } finally {
+                    setLoading(false);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
