@@ -119,9 +119,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Preparar dados para EmailJS
+        // Parâmetros: nome, telefone, phone, whatsapp, email, from_name
         const templateParams = {
             nome: document.getElementById('nome').value.trim(),
             telefone: document.getElementById('telefone').value.trim(),
+            phone: document.getElementById('telefone').value.trim(),
+            whatsapp: document.getElementById('telefone').value.trim(),
             email: document.getElementById('email').value.trim() || 'não informado',
             from_name: document.getElementById('nome').value.trim()
         };
